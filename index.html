@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio — Sofyen Ayed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            brand: '#ff6b6b',
+            ink: '#0f172a',
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+</head>
+<body class="font-sans antialiased bg-white text-ink scroll-smooth">
+  <!-- Navigation -->
+  <header class="fixed inset-x-0 top-0 z-50 bg-white/70 backdrop-blur shadow">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a class="text-xl font-bold tracking-tight" href="#home">Sofyen <span class="text-brand">Ayed</span></a>
+      <nav class="hidden gap-8 text-sm font-semibold md:flex">
+        <a class="hover:text-brand" href="#about">À propos</a>
+        <a class="hover:text-brand" href="#skills">Compétences</a>
+        <a class="hover:text-brand" href="#projects">Projets</a>
+        <a href="cv.pdf" download class="rounded-full border border-brand px-4 py-1 hover:bg-brand hover:text-white transition">CV</a>
+      </nav>
+      <button id="navToggle" class="text-2xl md:hidden"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <!-- Mobile menu -->
+    <nav id="mobileNav" class="hidden flex-col gap-4 px-6 pb-6 md:hidden">
+      <a class="hover:text-brand" href="#about">À propos</a>
+      <a class="hover:text-brand" href="#skills">Compétences</a>
+      <a class="hover:text-brand" href="#projects">Projets</a>
+      <a href="cv.pdf" download class="rounded-full border border-brand px-4 py-1 text-center hover:bg-brand hover:text-white transition">CV</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-brand/20 to-purple-500/10 pt-24">
+    <div aria-hidden="true" class="absolute inset-0 -z-10 bg-[url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=2100&q=80')] bg-cover bg-center opacity-20"></div>
+    <div class="mx-auto max-w-3xl p-6 text-center">
+      <h1 class="mb-6 text-4xl font-bold md:text-6xl">Créer des expériences numériques <span class="text-brand">inoubliables</span></h1>
+      <p class="mb-8 text-lg text-slate-700">Développeur passionné et étudiant en Réseaux & Télécoms</p>
+      <a href="#projects" class="inline-block rounded-full bg-brand px-8 py-3 font-semibold text-white shadow-lg transition hover:scale-105">Voir mes projets</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="mx-auto max-w-6xl px-6 py-20">
+    <div class="grid gap-10 md:grid-cols-2 md:items-center">
+      <img src="logo.png" alt="Portrait" class="mx-auto h-64 w-64 rounded-full object-cover shadow-lg" />
+      <div>
+        <h2 class="mb-4 text-3xl font-semibold">Enchanté&nbsp;!</h2>
+        <p class="text-slate-700 leading-relaxed">Je m'appelle <strong>Sofyen</strong> étudiant | IUT Nice Côte d'Azur | 1 ère Année BUT Réseaux & Télécommunication🖥 | Campus Sophia Tech</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="bg-slate-50 py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2 class="mb-12 text-center text-3xl font-semibold">Compétences clés</h2>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-xl bg-white p-6 text-center shadow-sm hover:shadow-lg">
+          <i class="fa-brands fa-html5 mb-4 text-4xl text-brand"></i>
+          <p class="font-medium">HTML / CSS</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 text-center shadow-sm hover:shadow-lg">
+          <i class="fa-brands fa-square-js mb-4 text-4xl text-brand"></i>
+          <p class="font-medium">JavaScript / TypeScript</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 text-center shadow-sm hover:shadow-lg">
+          <i class="fa-solid fa-network-wired mb-4 text-4xl text-brand"></i>
+          <p class="font-medium">Réseaux & Linux</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="mx-auto max-w-6xl px-6 py-20">
+    <h2 class="mb-12 text-center text-3xl font-semibold">Projets récents</h2>
+    <div class="grid gap-12 md:grid-cols-2">
+      <div class="group relative overflow-hidden rounded-xl shadow-lg">
+        <img src="projet1.png" alt="Developpement d'un site professionnelle" class="h-64 w-full object-cover transition duration-700 group-hover:scale-110" />
+        <div class="absolute inset-0 bg-ink/70 p-6 opacity-0 transition group-hover:opacity-100">
+          <h3 class="mb-2 text-xl font-semibold text-brand">Developpement d'un site professionnelle</h3>
+          <p class="text-slate-200 text-sm">HHTML / CSS / JavaScript  </p>
+        </div>
+      </div>
+      <div class="group relative overflow-hidden rounded-xl shadow-lg">
+        <img src="projet2.png" alt="PROJET NSI" class="h-64 w-full object-cover transition duration-700 group-hover:scale-110" />
+        <div class="absolute inset-0 bg-ink/70 p-6 opacity-0 transition group-hover:opacity-100">
+          <h3 class="mb-2 text-xl font-semibold text-brand">PROJET NSI</h3>
+          <p class="text-slate-200 text-sm">Scripts Python &amp; pour le déploiement d'un jeu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t bg-slate-50 py-10 text-center">
+    <div class="mb-4 flex justify-center gap-6 text-xl">
+      <a href="https://www.linkedin.com/in/ayedsofyen/" target="_blank" class="text-ink transition hover:text-brand"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/Sofyenayed" target="_blank" class="text-ink transition hover:text-brand"><i class="fab fa-github"></i></a>
+    </div>
+    <p class="text-sm text-slate-500">© 2025 Sofyen Ayed. Tous droits réservés.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Burger menu
+    const navToggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    navToggle.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+  </script>
+</body>
+</html>
