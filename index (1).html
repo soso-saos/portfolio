@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio — Sofyen Ayed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Poppins', 'sans-serif'] },
+          colors: { brand: '#ff6b6b', ink: '#0f172a' },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+</head>
+<body class="font-sans antialiased bg-white text-ink scroll-smooth">
+
+  <!-- Navigation -->
+  <header class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur shadow">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a class="text-xl font-bold tracking-tight" href="#home">Sofyen <span class="text-brand">Ayed</span></a>
+      <nav class="hidden gap-8 text-sm font-semibold md:flex">
+        <a class="hover:text-brand" href="#about">À propos</a>
+        <a class="hover:text-brand" href="#skills">Compétences</a>
+        <a class="hover:text-brand" href="#projects">Projets</a>
+        <a class="hover:text-brand" href="#xp">Expériences</a>
+        <a class="hover:text-brand" href="#contact">Contact</a>
+        <a href="cv.pdf" download class="rounded-full border border-brand px-4 py-1 hover:bg-brand hover:text-white transition">CV</a>
+      </nav>
+      <button id="navToggle" class="text-2xl md:hidden"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <nav id="mobileNav" class="hidden flex-col gap-4 px-6 pb-6 md:hidden">
+      <a class="hover:text-brand" href="#about">À propos</a>
+      <a class="hover:text-brand" href="#skills">Compétences</a>
+      <a class="hover:text-brand" href="#projects">Projets</a>
+      <a class="hover:text-brand" href="#xp">Expériences</a>
+      <a class="hover:text-brand" href="#contact">Contact</a>
+      <a href="cv.pdf" download class="rounded-full border border-brand px-4 py-1 text-center hover:bg-brand hover:text-white transition">CV</a>
+    </nav>
+  </header>
+
+  <!-- Hero / Accueil -->
+  <section id="home" class="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-brand/20 to-purple-500/10 pt-24">
+    <div aria-hidden="true" class="absolute inset-0 -z-10 bg-[url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=2100&q=80')] bg-cover bg-center opacity-20"></div>
+    <div class="mx-auto max-w-3xl p-6 text-center">
+      <img src="photo-profil.jpg" alt="Portrait Sofyen Ayed" class="mx-auto mb-6 h-36 w-36 rounded-full object-cover shadow-lg border-4 border-brand" />
+      <h1 class="mb-4 text-4xl font-bold md:text-6xl"> <span class="text-brand"></span></h1>
+      <p class="mb-8 text-lg text-slate-700">Étudiant BUT Réseaux & Télécoms • Développeur passionné • Nice — Sophia Tech</p>
+      <a href="#projects" class="inline-block rounded-full bg-brand px-8 py-3 font-semibold text-white shadow-lg transition hover:scale-105">Voir mes projets</a>
+      <a href="cv.pdf" download class="inline-block ml-4 rounded-full border border-brand px-8 py-3 font-semibold text-brand shadow-lg transition hover:bg-brand hover:text-white">Télécharger mon CV</a>
+    </div>
+  </section>
+
+  <!-- À propos -->
+  <section id="about" class="mx-auto max-w-6xl px-6 py-20">
+    <div class="grid gap-10 md:grid-cols-2 md:items-center">
+      <img src="photo-profil.jpg" alt="Portrait" class="mx-auto h-64 w-64 rounded-full object-cover shadow-lg" />
+      <div>
+        <h2 class="mb-4 text-3xl font-semibold">Enchanté !</h2>
+        <p class="text-slate-700 leading-relaxed mb-4">
+          Je m'appelle <strong>Sofyen Ayed</strong>.<br>
+          Étudiant en 1ère année de BUT Réseaux & Télécommunications à l'IUT Nice Côte d'Azur, je suis passionné par le développement et les nouvelles technologies. 
+          J’aime relever de nouveaux défis, apprendre chaque jour et concevoir des solutions utiles et innovantes.
+        </p>
+        <ul class="mb-2">
+          <li><i class="fa-solid fa-location-dot text-brand"></i> Nice / Sophia Antipolis</li>
+          <li><i class="fa-solid fa-envelope text-brand"></i> ayedsofyen7@gmail.com</li>
+          <li><i class="fa-solid fa-phone text-brand"></i> +33 7 69 73 47 70</li>
+        </ul>
+        <p class="text-slate-700">Langues : Anglais courant, Arabe courant, Espagnol intermédiaire</p>
+        <div class="flex gap-4 mt-4">
+          <a href="https://www.linkedin.com/in/ayedsofyen/" target="_blank" class="text-ink text-xl hover:text-brand"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Sofyenayed" target="_blank" class="text-ink text-xl hover:text-brand"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compétences -->
+  <section id="skills" class="bg-slate-50 py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2 class="mb-12 text-center text-3xl font-semibold">Compétences clés</h2>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-xl bg-white p-6 text-center shadow-sm hover:shadow-lg transition">
+          <i class="fa-brands fa-html5 mb-4 text-4xl text-brand"></i>
+          <p class="font-medium">HTML / CSS</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 text-center shadow-sm hover:shadow-lg transition">
+          <i class="fa-brands fa-square-js mb-4 text-4xl text-brand"></i>
+          <p class="font-medium">JavaScript / PHP</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 text-center shadow-sm hover:shadow-lg transition">
+          <i class="fa-solid fa-code mb-4 text-4xl text-brand"></i>
+          <p class="font-medium">Python / C</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 text-center shadow-sm hover:shadow-lg transition">
+          <i class="fa-solid fa-network-wired mb-4 text-4xl text-brand"></i>
+          <p class="font-medium">Réseaux & Linux</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="mx-auto max-w-6xl px-6 py-20">
+  <h2 class="mb-12 text-center text-3xl font-semibold">Projets récents</h2>
+  <div class="grid gap-12 md:grid-cols-2">
+
+    <!-- Projet 1 -->
+    <div class="group relative overflow-hidden rounded-xl shadow-lg transition">
+      <img src="projet1.png" alt="Projet Thales" class="h-64 w-full object-cover transition duration-700 group-hover:scale-110" />
+      <div class="absolute inset-0 bg-ink/80 p-6 opacity-0 group-hover:opacity-100 transition">
+        <h3 class="mb-2 text-xl font-semibold text-brand">Projet Thales Alenia Space</h3>
+        <p class="text-slate-200 text-sm">
+          Développement d’un site web dynamique en PHP pour un banc avionique intelligent. Collaboration avec des professionnels du secteur aérospatial, intégration d’outils interactifs et de sécurité.
+        </p>
+        <a href="" target="_blank" class="inline-block mt-4 rounded-full border border-brand px-4 py-2 font-semibold text-brand hover:bg-brand hover:text-white transition">Voir le rapport</a>
+      </div>
+    </div>
+
+    <!-- Projet 2 -->
+    <div class="group relative overflow-hidden rounded-xl shadow-lg transition">
+      <img src="projet2.png" alt="Projet NSI" class="h-64 w-full object-cover transition duration-700 group-hover:scale-110" />
+      <div class="absolute inset-0 bg-ink/80 p-6 opacity-0 group-hover:opacity-100 transition">
+        <h3 class="mb-2 text-xl font-semibold text-brand">Projet NSI — JO 2024</h3>
+        <p class="text-slate-200 text-sm">
+          Création d’un jeu en Python autour des JO 2024 dans un cadre scolaire. Prix régional obtenu lors du concours NSI. Travail en équipe, gestion de projet et déploiement d’application.
+        </p>
+        <a href="https://depot.trophees-nsi.fr/uploads/OjZVEm14nPThZCAvcLzY2vvYNanZ6cQ05YmKJWW4.pdf" target="_blank" class="inline-block mt-4 rounded-full border border-brand px-4 py-2 font-semibold text-brand hover:bg-brand hover:text-white transition">Voir le rapport</a>
+      </div>
+    </div>
+
+    <!-- Projet Réseau SAE21 -->
+    <div class="group relative overflow-hidden rounded-xl shadow-lg transition">
+      <img src="projet3.png" alt="Projet Réseau SAE21" class="h-64 w-full object-cover transition duration-700 group-hover:scale-110" />
+      <div class="absolute inset-0 bg-ink/80 p-6 opacity-0 group-hover:opacity-100 transition">
+        <h3 class="mb-2 text-xl font-semibold text-brand">Projet Réseau SAE21</h3>
+        <p class="text-slate-200 text-sm">
+          Conception complète du réseau d’une PME sur Cisco Packet Tracer :<br>
+          <b>• VLAN, routage, pare-feu, DMZ, NAT, services DHCP/DNS</b><br>
+          <b>• Sécurisation d’accès Internet et publication de serveur web</b><br>
+          <b>• Documentation complète, schéma d’architecture, plan d’adressage</b><br>
+          Projet individuel, respect d’un cahier des charges exigeant, <b>déploiement sécurisé et démonstration en vidéo</b>.
+        </p>
+        <a href="SAE21.pkt" download class="inline-block mt-4 rounded-full border border-brand px-4 py-2 font-semibold text-brand hover:bg-brand hover:text-white transition">
+  Télécharger le fichier .pkt
+</a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Expériences & Activités -->
+  <section id="xp" class="mx-auto max-w-6xl px-6 py-20">
+    <h2 class="mb-12 text-center text-3xl font-semibold">Expériences & Activités</h2>
+    <div class="grid gap-8 md:grid-cols-3">
+      <div class="rounded-xl bg-white p-6 shadow-md hover:shadow-lg">
+        <h3 class="text-brand font-semibold mb-2">2024 — Projet Thales Alenia Space</h3>
+        <p class="text-slate-700 text-sm">Développement d’un site web dynamique pour un banc avionique intelligent, collaboration avec des professionnels du secteur aérospatial.</p>
+      </div>
+      <div class="rounded-xl bg-white p-6 shadow-md hover:shadow-lg">
+        <h3 class="text-brand font-semibold mb-2">2023 — Projet NSI Concours</h3>
+        <p class="text-slate-700 text-sm">Projet Python sur les JO 2024, obtention du 1er prix régional, travail d’équipe, gestion de projet et déploiement d’application.</p>
+      </div>
+      <div class="rounded-xl bg-white p-6 shadow-md hover:shadow-lg">
+        <h3 class="text-brand font-semibold mb-2">Événement sportif (arbitrage)</h3>
+        <p class="text-slate-700 text-sm">Arbitrage et organisation lors d’un tournoi de football à Nice. Développement du leadership, gestion du stress et esprit d’équipe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-slate-50 py-20">
+    <div class="mx-auto max-w-3xl px-6">
+      <h2 class="mb-8 text-center text-3xl font-semibold">Contact</h2>
+      <form class="space-y-6">
+        <div>
+          <label class="block mb-2 font-medium" for="name">Nom</label>
+          <input type="text" id="name" name="name" class="w-full rounded-lg border border-slate-300 p-3 focus:border-brand focus:ring-brand" required>
+        </div>
+        <div>
+          <label class="block mb-2 font-medium" for="email">Email</label>
+          <input type="email" id="email" name="email" class="w-full rounded-lg border border-slate-300 p-3 focus:border-brand focus:ring-brand" required>
+        </div>
+        <div>
+          <label class="block mb-2 font-medium" for="message">Message</label>
+          <textarea id="message" name="message" rows="4" class="w-full rounded-lg border border-slate-300 p-3 focus:border-brand focus:ring-brand" required></textarea>
+        </div>
+        <button type="submit" class="rounded-full bg-brand px-8 py-3 font-semibold text-white shadow-lg transition hover:scale-105">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t bg-slate-50 py-10 text-center">
+    <div class="mb-4 flex justify-center gap-6 text-xl">
+      <a href="https://www.linkedin.com/in/ayedsofyen/" target="_blank" class="text-ink transition hover:text-brand"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/Sofyenayed" target="_blank" class="text-ink transition hover:text-brand"><i class="fab fa-github"></i></a>
+    </div>
+    <p class="text-sm text-slate-500">© 2025 Sofyen Ayed. Tous droits réservés.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Burger menu
+    const navToggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    navToggle.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+  </script>
+</body>
+</html>
