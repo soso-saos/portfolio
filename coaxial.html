@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Projet Analyse Câble Coaxial — Sofyen Ayed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Poppins', 'sans-serif'] },
+          colors: { 
+            brand: { DEFAULT: '#ff6b6b' },
+            ink: { DEFAULT: '#0f172a' },
+            light: '#f8fafc',
+          }
+        },
+      },
+    };
+  </script>
+</head>
+<body class="font-sans antialiased bg-light text-ink">
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <a href="index.html" class="text-brand font-semibold hover:underline">&larr; Retour au portfolio</a>
+    <h1 class="text-4xl font-bold mt-8 mb-2 text-ink">Étude de Cas : <span class="text-brand">Analyse d'un Câble Coaxial</span></h1>
+    <p class="mb-8 text-lg text-ink/70">Étude pratique et mesure des caractéristiques d'un support de transmission physique.</p>
+    
+    <div class="space-y-10">
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">1</span>Le Défi</h2>
+        <p class="text-ink/80">L'objectif de ce projet était de passer de la théorie à la pratique en analysant un support de transmission réel. Il fallait utiliser des instruments de mesure professionnels (analyseur de réseau vectoriel, oscilloscope) pour déterminer l'impédance caractéristique, l'affaiblissement et la vitesse de propagation d'un câble coaxial. Le but final était de comparer les valeurs mesurées aux données du fabricant pour valider le modèle théorique.</p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">2</span>Ma Contribution</h2>
+        <ul class="list-disc ml-6 space-y-2 text-ink/80">
+            <li><strong>Mise en place du banc de test :</strong> J'ai participé à la mise en place du protocole de mesure, en connectant le câble aux équipements et en les calibrant correctement.</li>
+            <li><strong>Réalisation des mesures :</strong> J'ai effectué les différentes mesures de signaux à travers le câble pour quantifier la perte de puissance (affaiblissement) et le temps de parcours (vitesse de propagation).</li>
+            <li><strong>Analyse et Interprétation :</strong> J'ai traité les données, calculé les grandeurs physiques requises et rédigé un rapport d'analyse comparant nos résultats à la théorie et justifiant les écarts observés.</li>
+        </ul>
+      </div>
+       <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">3</span>Les Résultats & Apprentissages</h2>
+        <p class="text-ink/80">Ce projet m'a apporté une compréhension profonde des phénomènes physiques qui régissent la transmission des signaux. J'ai développé une grande rigueur dans la mesure et une approche méthodique pour analyser des résultats expérimentaux. C'est une compétence fondamentale pour tout ingénieur réseau qui doit diagnostiquer des problèmes de connectivité au niveau physique (couche 1 du modèle OSI).</p>
+      </div>
+    </div>
+    
+    <div class="mt-16 text-center">
+      <a href="index.html" class="inline-block rounded-full bg-brand px-8 py-3 font-semibold text-white shadow-lg transition hover:scale-105 hover:shadow-brand/50">Retour au portfolio</a>
+    </div>
+  </div>
+</body>
+</html>

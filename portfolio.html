@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Projet Méta Portfolio — Sofyen Ayed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Poppins', 'sans-serif'] },
+          colors: { 
+            brand: { DEFAULT: '#ff6b6b' },
+            ink: { DEFAULT: '#0f172a' },
+            light: '#f8fafc',
+          }
+        },
+      },
+    };
+  </script>
+</head>
+<body class="font-sans antialiased bg-light text-ink">
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <a href="index.html" class="text-brand font-semibold hover:underline">&larr; Retour au portfolio</a>
+    <h1 class="text-4xl font-bold mt-8 mb-2 text-ink">Étude de Cas : <span class="text-brand">Mon Portfolio (Méta-Projet)</span></h1>
+    <p class="mb-8 text-lg text-ink/70">Conception et développement de ce site comme un véritable projet professionnel.</p>
+    
+    <div class="space-y-10">
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">1</span>Le Défi</h2>
+        <p class="text-ink/80">Le défi n'était pas seulement de créer un site pour lister mes projets, mais de concevoir une expérience qui reflète ma double compétence en développement et en réseaux. Comment créer une vitrine qui soit non seulement esthétique et fonctionnelle, mais qui raconte une histoire et démontre mes compétences de manière interactive ? Mon cahier des charges personnel était : originalité, professionnalisme et démonstration par l'exemple.</p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">2</span>La Solution Technique</h2>
+        <ul class="list-disc ml-6 space-y-2 text-ink/80">
+            <li><strong>Stack Technique :</strong> J'ai choisi de coder ce site en <strong>HTML5 sémantique</strong>, en m'appuyant sur le framework <strong>Tailwind CSS</strong> pour un design rapide, moderne et responsive.</li>
+            <li><strong>Interactivité (JavaScript) :</strong> J'ai développé en <strong>JavaScript natif</strong> les éléments interactifs clés du site, notamment l'animation du terminal en page d'accueil et le système de mise en surbrillance croisée entre les compétences et les projets.</li>
+            <li><strong>Démarche UX/UI :</strong> J'ai mené une réflexion sur le parcours utilisateur pour guider le visiteur (un recruteur, par exemple) de manière fluide et logique, de l'introduction originale jusqu'aux études de cas détaillées.</li>
+        </ul>
+      </div>
+       <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">3</span>Les Résultats & Apprentissages</h2>
+        <p class="text-ink/80">Ce portfolio est le projet qui représente le mieux ma philosophie : un produit numérique réussi est le fruit d'une réflexion en amont, d'une maîtrise technique et d'une attention portée à l'expérience finale. Le développer m'a permis de consolider mes compétences en développement front-end, mais surtout de prendre du recul sur mon propre parcours pour apprendre à le communiquer efficacement.</p>
+      </div>
+    </div>
+    
+    <div class="mt-16 text-center">
+      <a href="index.html" class="inline-block rounded-full bg-brand px-8 py-3 font-semibold text-white shadow-lg transition hover:scale-105 hover:shadow-brand/50">Retour au portfolio</a>
+    </div>
+  </div>
+</body>
+</html>

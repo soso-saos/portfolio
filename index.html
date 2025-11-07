@@ -2,233 +2,373 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Portfolio — Sofyen Ayed</title>
+  <title>Sofyen Ayed — Portfolio Créatif | Développement & Réseaux</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Découvrez le portfolio interactif de Sofyen Ayed. Explorez mes projets en développement, réseau et cybersécurité et voyez comment mes compétences prennent vie." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Poppins', 'sans-serif'] },
-          colors: { brand: '#ff6b6b', ink: '#0f172a' },
+          fontFamily: { 
+            sans: ['Poppins', 'sans-serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace']
+          },
+          colors: { 
+            brand: { DEFAULT: '#ff6b6b', light: '#ffa0a0' },
+            ink: { DEFAULT: '#0f172a', light: '#334155' },
+            light: '#f8fafc',
+          },
+          animation: {
+            'gradient-bg': 'gradient-bg 15s ease infinite',
+          },
+          keyframes: {
+            'gradient-bg': {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' },
+            },
+          }
         },
       },
     };
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+  <style>
+    .skill-tag { transition: all 0.2s ease-in-out; }
+    .project-card { transition: all 0.3s ease-in-out; }
+    .highlight { background-color: #ff6b6b !important; color: white !important; transform: scale(1.05); box-shadow: 0 0 15px rgba(255, 107, 107, 0.7); }
+    .dimmed { opacity: 0.3; }
+  </style>
 </head>
-<body class="font-sans antialiased bg-white text-ink scroll-smooth">
+<body class="font-sans antialiased bg-light text-ink scroll-smooth">
 
-  <!-- Navigation -->
-  <header class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur shadow">
+  <header class="fixed inset-x-0 top-0 z-50 bg-light/80 backdrop-blur shadow-sm">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
       <a class="text-xl font-bold tracking-tight" href="#home">Sofyen <span class="text-brand">Ayed</span></a>
       <nav class="hidden gap-8 text-sm font-semibold md:flex">
-        <a class="hover:text-brand" href="#about">À propos</a>
-        <a class="hover:text-brand" href="#skills">Compétences</a>
-        <a class="hover:text-brand" href="#projects">Projets</a>
-        <a class="hover:text-brand" href="#xp">Expériences</a>
+        <a class="hover:text-brand" href="#story">Mon Histoire</a>
+        <a class="hover:text-brand" href="#interactive-map">Compétences en Action</a>
+        <a class="hover:text-brand" href="#journey">Mon Parcours</a>
         <a class="hover:text-brand" href="#contact">Contact</a>
-        <a href="cv-2026.pdf" download class="rounded-full border border-brand px-4 py-1 hover:bg-brand hover:text-white transition">CV 2026</a>
       </nav>
       <button id="navToggle" class="text-2xl md:hidden"><i class="fa-solid fa-bars"></i></button>
     </div>
     <nav id="mobileNav" class="hidden flex-col gap-4 px-6 pb-6 md:hidden">
-      <a class="hover:text-brand" href="#about">À propos</a>
-      <a class="hover:text-brand" href="#skills">Compétences</a>
-      <a class="hover:text-brand" href="#projects">Projets</a>
-      <a class="hover:text-brand" href="#xp">Expériences</a>
-      <a class="hover:text-brand" href="#contact">Contact</a>
-      <a href="cv-2026.pdf" download class="rounded-full border border-brand px-4 py-1 text-center hover:bg-brand hover:text-white transition">CV 2026</a>
+       <a class="hover:text-brand" href="#story">Mon Histoire</a>
+       <a class="hover:text-brand" href="#interactive-map">Compétences en Action</a>
+       <a class="hover:text-brand" href="#journey">Mon Parcours</a>
+       <a class="hover:text-brand" href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- Hero / Accueil -->
-  <section id="home" class="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-brand/20 to-purple-500/10 pt-24">
-    <div aria-hidden="true" class="absolute inset-0 -z-10 bg-[url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=2100&q=80')] bg-cover bg-center opacity-20"></div>
-    <div class="mx-auto max-w-3xl p-6 text-center">
-      <img src="pp.jpg" alt="Portrait Sofyen Ayed" class="mx-auto mb-6 h-36 w-36 rounded-full object-cover shadow-lg border-4 border-brand" />
-      <h1 class="mb-4 text-4xl font-bold md:text-6xl">
-        <span class="text-brand">Développeur & Ingénieur Réseaux en devenir</span>
-      </h1>
-      <p class="mb-8 text-lg text-slate-700">
-        Curieux, créatif et rigoureux, je conçois des solutions numériques innovantes et performantes.<br>
-        Mon objectif : relier les technologies et les hommes pour bâtir le monde de demain.
-      </p>
-      <a href="#projects" class="inline-block rounded-full bg-brand px-8 py-3 font-semibold text-white shadow-lg transition hover:scale-105">Voir mes projets</a>
-      <a href="cv-2026.pdf" download class="inline-block ml-4 rounded-full border border-brand px-8 py-3 font-semibold text-brand shadow-lg transition hover:bg-brand hover:text-white">Télécharger mon CV 2026</a>
+  <section id="home" class="relative flex min-h-screen items-center justify-center overflow-hidden p-4 bg-slate-100">
+    <div id="terminal" class="w-full max-w-4xl rounded-lg shadow-2xl bg-ink font-mono text-sm text-white/90 overflow-hidden" style="min-height: 500px;">
+      <div class="bg-slate-700/50 h-9 flex items-center px-4 gap-2">
+        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+      </div>
+      
+      <div id="terminal-content" class="p-6">
+        <div id="terminal-output"></div>
+        <div class="hidden items-center gap-6 mt-8" id="profile-reveal">
+            <img src="pp.jpg" alt="Portrait Sofyen Ayed" class="h-28 w-28 rounded-full object-cover border-2 border-brand" />
+            <div>
+                <h2 class="font-bold text-2xl text-white">Sofyen Ayed</h2>
+                <p class="text-brand">Architecte de Solutions Numériques</p>
+                <a href="#interactive-map" class="mt-4 inline-block rounded-md bg-brand px-6 py-2 font-sans font-semibold text-white transition hover:bg-brand/80">
+                    Explorer mes projets <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+      </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const output = document.getElementById('terminal-output');
+            const profileReveal = document.getElementById('profile-reveal');
+            
+            const lines = [
+                { text: 'sofyen-ayed --init', isCommand: true, delay: 1000 },
+                { text: 'Initialisation du profil...', isCommand: false, delay: 500 },
+                { text: '<span class="text-green-400">Succès.</span> Connexion établie.', isCommand: false, delay: 1500 },
+                { text: './get-skills.sh --all', isCommand: true, delay: 1000 },
+                { text: 'Chargement des compétences :', isCommand: false, delay: 500 },
+                { text: ' <span class="text-brand">[</span> Développement Web <span class="text-brand">]</span>', isCommand: false, delay: 200 },
+                { text: ' <span class="text-brand">[</span> Ingénierie Réseau <span class="text-brand">]</span>', isCommand: false, delay: 200 },
+                { text: ' <span class="text-brand">[</span> Cybersécurité <span class="text-brand">]</span>', isCommand: false, delay: 1000 },
+                { text: 'display --profile', isCommand: true, delay: 1000 },
+            ];
+
+            let lineIndex = 0;
+
+            function typeLine() {
+                if (lineIndex >= lines.length) {
+                    revealProfile();
+                    return;
+                }
+
+                const line = lines[lineIndex];
+                const lineElement = document.createElement('div');
+                output.appendChild(lineElement);
+                
+                if (line.isCommand) {
+                    lineElement.innerHTML = `<span class="text-cyan-400 mr-2">$</span>`;
+                }
+                
+                let charIndex = 0;
+                const typingInterval = setInterval(() => {
+                    if (charIndex < line.text.length) {
+                        lineElement.innerHTML += line.text.charAt(charIndex);
+                        charIndex++;
+                    } else {
+                        clearInterval(typingInterval);
+                        const cursor = document.createElement('span');
+                        cursor.className = 'blinking-cursor';
+                        cursor.innerHTML = '&#9646;';
+                        if (!line.isCommand) {
+                           lineElement.appendChild(cursor); 
+                        }
+                        
+                        const allLines = output.querySelectorAll('div');
+                        if (allLines.length > 1) {
+                            const prevCursor = allLines[allLines.length - 2].querySelector('.blinking-cursor');
+                            if(prevCursor) prevCursor.remove();
+                        }
+
+                        lineIndex++;
+                        setTimeout(typeLine, line.delay);
+                    }
+                }, 50);
+            }
+
+            function revealProfile() {
+                const finalCursor = output.querySelector('.blinking-cursor');
+                if(finalCursor) finalCursor.remove();
+                
+                profileReveal.classList.remove('hidden');
+                profileReveal.classList.add('flex');
+                profileReveal.animate([
+                    { opacity: 0, transform: 'translateY(20px)' },
+                    { opacity: 1, transform: 'translateY(0)' }
+                ], {
+                    duration: 600,
+                    easing: 'ease-out',
+                    fill: 'forwards'
+                });
+            }
+
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .blinking-cursor {
+                    animation: blink 1s step-end infinite;
+                }
+                @keyframes blink {
+                    from, to { color: transparent; }
+                    50% { color: white; }
+                }
+            `;
+            document.head.appendChild(style);
+
+            typeLine();
+        });
+    </script>
   </section>
 
-  <!-- À propos -->
-  <section id="about" class="mx-auto max-w-6xl px-6 py-20">
-    <div class="grid gap-10 md:grid-cols-2 md:items-center">
-      <img src="pp.jpg" alt="Portrait" class="mx-auto h-64 w-64 rounded-full object-cover shadow-lg" />
-      <div>
-        <h2 class="mb-4 text-3xl font-semibold">Enchanté !</h2>
-        <p class="text-slate-700 leading-relaxed mb-4">
-          Je m'appelle <strong>Sofyen Ayed</strong>.<br>
-          Étudiant en 2<sup>e</sup> année de BUT Réseaux & Télécommunications à l'IUT Nice Côte d'Azur, je suis passionné par le développement, la cybersécurité et l’innovation numérique.<br>
-          J’aime apprendre, relever des défis et travailler en équipe pour transformer des idées en projets concrets et utiles.
+  <section id="story" class="mx-auto max-w-5xl px-6 py-24">
+    <h2 class="mb-4 text-3xl font-semibold text-center">Mon histoire : la curiosité comme moteur.</h2>
+    <p class="text-center text-ink-light max-w-3xl mx-auto mb-12">
+        Découvrez qui je suis, ce qui m'anime et la double passion pour le code et les infrastructures qui façonne mon parcours.
+        <br>C'est ici que mon aventure dans le monde du numérique a commencé.
+    </p>
+    <div class="grid gap-12 md:grid-cols-5 md:items-center">
+      <div class="md:col-span-2">
+        <img src="pp.jpg" alt="Portrait" class="mx-auto h-64 w-64 rounded-full object-cover shadow-xl" />
+      </div>
+      <div class="md:col-span-3">
+        <p class="text-ink-light leading-relaxed mb-4">
+          Je m'appelle <strong>Sofyen Ayed</strong>. Depuis toujours, je suis animé par une question : "Comment ça marche ?". Cette curiosité m'a d'abord poussé vers le code, pour construire des applications et des sites web. Puis, elle m'a entraîné plus profondément, vers les fondations du numérique : les réseaux, la sécurité, l'infrastructure qui rend tout possible.
         </p>
-        <ul class="mb-2">
-          <li><i class="fa-solid fa-location-dot text-brand"></i> Nice / Sophia Antipolis</li>
-          <li><i class="fa-solid fa-envelope text-brand"></i> ayedsofyen7@gmail.com</li>
-          <li><i class="fa-solid fa-phone text-brand"></i> +33 7 69 73 47 70</li>
-        </ul>
-        <p class="text-slate-700">Langues : Anglais courant, Arabe courant, Espagnol intermédiaire</p>
-        <div class="flex gap-4 mt-4">
-          <a href="https://www.linkedin.com/in/ayedsofyen/" target="_blank" class="text-ink text-xl hover:text-brand" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/Sofyenayed" target="_blank" class="text-ink text-xl hover:text-brand" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <p class="text-ink-light leading-relaxed">
+          Aujourd'hui, étudiant en <strong>BUT Réseaux & Télécommunications</strong>, je cultive cette double passion. Je suis convaincu que les meilleures solutions naissent à la croisée des chemins, entre un développement élégant et une infrastructure robuste.
+        </p>
+        <div class="flex gap-4 mt-6">
+          <a href="https://www.linkedin.com/in/ayedsofyen/" target="_blank" class="text-ink text-2xl hover:text-brand transition" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Sofyenayed" target="_blank" class="text-ink text-2xl hover:text-brand transition" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="CV-Sofyen-Ayed.pdf" download class="ml-auto rounded-full border border-brand px-5 py-2 text-sm font-semibold text-brand transition hover:bg-brand hover:text-white">Télécharger mon CV</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Compétences -->
-  <section id="skills" class="bg-slate-50 py-20">
+  <section id="interactive-map" class="bg-ink py-24 text-light">
     <div class="mx-auto max-w-6xl px-6">
-      <h2 class="mb-12 text-center text-3xl font-semibold">Compétences clés</h2>
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="rounded-xl bg-white p-6 text-center shadow-sm hover:shadow-lg transition">
-          <i class="fa-brands fa-html5 mb-4 text-4xl text-brand"></i>
-          <p class="font-medium">HTML / CSS / Tailwind</p>
-        </div>
-        <div class="rounded-xl bg-white p-6 text-center shadow-sm hover:shadow-lg transition">
-          <i class="fa-brands fa-square-js mb-4 text-4xl text-brand"></i>
-          <p class="font-medium">JavaScript / PHP / SQL</p>
-        </div>
-        <div class="rounded-xl bg-white p-6 text-center shadow-sm hover:shadow-lg transition">
-          <i class="fa-solid fa-code mb-4 text-4xl text-brand"></i>
-          <p class="font-medium">Python / C / Bash</p>
-        </div>
-        <div class="rounded-xl bg-white p-6 text-center shadow-sm hover:shadow-lg transition">
-          <i class="fa-solid fa-network-wired mb-4 text-4xl text-brand"></i>
-          <p class="font-medium">Réseaux, Linux, Sécurité, Virtualisation</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projets -->
-  <section id="projects" class="mx-auto max-w-6xl px-6 py-20">
-    <h2 class="mb-12 text-center text-3xl font-semibold">Projets récents</h2>
-    <div class="grid gap-12 md:grid-cols-2">
-
-      <!-- Projet 1 -->
-      <div class="group relative overflow-hidden rounded-xl shadow-lg transition">
-        <img src="projet1.png" alt="Projet Thales" class="h-64 w-full object-cover transition duration-700 group-hover:scale-110" />
-        <div class="absolute inset-0 bg-ink/80 p-6 opacity-0 group-hover:opacity-100 transition flex flex-col justify-center">
-          <h3 class="mb-2 text-xl font-semibold text-brand">Projet Thales Alenia Space</h3>
-          <p class="text-slate-200 text-sm">
-            Développement d’un site web dynamique en PHP pour un banc avionique intelligent.<br>
-            Collaboration avec des professionnels du secteur aérospatial, intégration d’outils interactifs et de sécurité.
-          </p>
-          <a href="thales.html" class="inline-block mt-4 rounded-full border border-brand px-4 py-2 font-semibold text-brand hover:bg-brand hover:text-white transition">Voir la page projet</a>
-        </div>
-      </div>
-
-      <!-- Projet 2 -->
-      <div class="group relative overflow-hidden rounded-xl shadow-lg transition">
-        <img src="projet2.png" alt="Projet NSI" class="h-64 w-full object-cover transition duration-700 group-hover:scale-110" />
-        <div class="absolute inset-0 bg-ink/80 p-6 opacity-0 group-hover:opacity-100 transition flex flex-col justify-center">
-          <h3 class="mb-2 text-xl font-semibold text-brand">Projet NSI — JO 2024</h3>
-          <p class="text-slate-200 text-sm">
-            Création d’un jeu en Python autour des JO 2024 dans un cadre scolaire.<br>
-            Prix régional obtenu lors du concours NSI. Travail en équipe, gestion de projet et déploiement d’application.
-          </p>
-          <a href="nsi-jo2024.html" class="inline-block mt-4 rounded-full border border-brand px-4 py-2 font-semibold text-brand hover:bg-brand hover:text-white transition">Voir la page projet</a>
-        </div>
-      </div>
-
-      <!-- Projet Réseau SAE21 -->
-      <div class="group relative overflow-hidden rounded-xl shadow-lg transition">
-        <img src="projet3.png" alt="Projet Réseau SAE21" class="h-64 w-full object-cover transition duration-700 group-hover:scale-110" />
-        <div class="absolute inset-0 bg-ink/80 p-6 opacity-0 group-hover:opacity-100 transition flex flex-col justify-center">
-          <h3 class="mb-2 text-xl font-semibold text-brand">Projet Réseau SAE21</h3>
-          <p class="text-slate-200 text-sm">
-            Conception complète du réseau d’une PME sur Cisco Packet Tracer :<br>
-            <b>• VLAN, routage, pare-feu, DMZ, NAT, services DHCP/DNS</b><br>
-            <b>• Sécurisation d’accès Internet et publication de serveur web</b><br>
-            <b>• Documentation complète, schéma d’architecture, plan d’adressage</b><br>
-            Projet individuel, respect d’un cahier des charges exigeant, <b>déploiement sécurisé et démonstration en vidéo</b>.
-          </p>
-          <a href="sae21.html" class="inline-block mt-4 rounded-full border border-brand px-4 py-2 font-semibold text-brand hover:bg-brand hover:text-white transition">Voir la page projet</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Expériences & Activités -->
-  <section id="xp" class="mx-auto max-w-6xl px-6 py-20">
-    <h2 class="mb-12 text-center text-3xl font-semibold">Expériences & Activités</h2>
-    <div class="grid gap-8 md:grid-cols-3">
-      <div class="rounded-xl bg-white p-6 shadow-md hover:shadow-lg">
-        <h3 class="text-brand font-semibold mb-2">2025 — Stage Réseaux & Sécurité (SophiaTech)</h3>
-        <p class="text-slate-700 text-sm">Participation à la sécurisation d’une infrastructure réseau d’entreprise, mise en place de solutions de monitoring et de firewall, rédaction de documentation technique.</p>
-      </div>
-      <div class="rounded-xl bg-white p-6 shadow-md hover:shadow-lg">
-        <h3 class="text-brand font-semibold mb-2">2024 — Projet Thales Alenia Space</h3>
-        <p class="text-slate-700 text-sm">Développement d’un site web dynamique pour un banc avionique intelligent, collaboration avec des professionnels du secteur aérospatial.</p>
-      </div>
-      <div class="rounded-xl bg-white p-6 shadow-md hover:shadow-lg">
-        <h3 class="text-brand font-semibold mb-2">2023 — Projet NSI Concours</h3>
-        <p class="text-slate-700 text-sm">Projet Python sur les JO 2024, obtention du 1er prix régional, travail d’équipe, gestion de projet et déploiement d’application.</p>
-      </div>
-      <div class="rounded-xl bg-white p-6 shadow-md hover:shadow-lg">
-        <h3 class="text-brand font-semibold mb-2">Événement sportif (arbitrage)</h3>
-        <p class="text-slate-700 text-sm">Arbitrage et organisation lors d’un tournoi de football à Nice. Développement du leadership, gestion du stress et esprit d’équipe.</p>
-      </div>
-      <div class="rounded-xl bg-white p-6 shadow-md hover:shadow-lg">
-        <h3 class="text-brand font-semibold mb-2">Assistant logistique</h3>
-        <p class="text-slate-700 text-sm">
-          Aide à la gestion et au suivi des colis (Mondial Relay, Colissimo, Chronopost).<br>
-          Accueil et orientation des participants lors de l’Iron Man.<br>
-          Aide logistique en entreprise : gestion du stock et rangement chez Uniqlo.
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-semibold mb-4">Mes Compétences en Action</h2>
+        <p class="text-slate-400 max-w-3xl mx-auto">
+            Je ne me contente pas de lister mes compétences, je les mets en scène. 
+            <br>Survolez un savoir-faire pour illuminer les projets correspondants, et vice-versa.
         </p>
       </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div>
+          <h3 class="font-bold text-xl mb-6 text-brand">Compétences Techniques</h3>
+          <div id="skills-container-tech" class="flex flex-wrap gap-3">
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="dev-web">Développement Web (PHP, JS)</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="html-css">HTML5 / CSS3</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="python">Python</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="reseau">Architecture Réseau</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="securite">Sécurité & Firewall</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="cisco">Configuration Cisco</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="admin-sys">Administration Système</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="linux">Linux & Bash</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="analyse-signaux">Analyse de Signaux</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="mesures-physiques">Mesures Physiques</span>
+          </div>
+          <h3 class="font-bold text-xl mt-10 mb-6 text-sky-400">Compétences Humaines</h3>
+           <div id="skills-container-soft" class="flex flex-wrap gap-3">
+            <span class="skill-tag cursor-pointer rounded-lg bg-sky-800 px-4 py-2" data-skill="gestion-projet">Gestion de Projet</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-sky-800 px-4 py-2" data-skill="travail-equipe">Travail d'équipe</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-sky-800 px-4 py-2" data-skill="communication">Communication & Pédagogie</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-sky-800 px-4 py-2" data-skill="rigueur">Rigueur & Analyse</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-sky-800 px-4 py-2" data-skill="documentation">Documentation Technique</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-sky-800 px-4 py-2" data-skill="autonomie">Autonomie & Initiative</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-xl mb-6 text-brand">Mes Créations (Ordre Chronologique)</h3>
+          <div id="projects-container" class="space-y-6">
+            <a href="thales.html" target="_blank" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="dev-web gestion-projet documentation securite travail-equipe html-css">
+              <h4 class="font-semibold text-white">Projet Thales Alenia Space</h4>
+              <p class="text-slate-400 text-sm">Développement d'un site web PHP sécurisé pour piloter un banc avionique intelligent.</p>
+            </a>
+             <a href="sae21.html" target="_blank" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="reseau securite cisco linux documentation admin-sys rigueur">
+              <h4 class="font-semibold text-white">Projet Réseau : Architecture PME</h4>
+              <p class="text-slate-400 text-sm">Conception complète et sécurisation d'une infrastructure réseau (VLAN, Firewall, DMZ, NAT).</p>
+            </a>
+            <a href="portfolio.html" target="_blank" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="dev-web gestion-projet html-css autonomie">
+              <h4 class="font-semibold text-white">Projet Méta : Ce Portfolio</h4>
+              <p class="text-slate-400 text-sm">Conception et développement du présent portfolio comme outil de communication et démonstration technique.</p>
+            </a>
+            <a href="coaxial.html" target="_blank" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="documentation reseau analyse-signaux mesures-physiques rigueur">
+              <h4 class="font-semibold text-white">Projet Analyse Physique : Câble Coaxial</h4>
+              <p class="text-slate-400 text-sm">Étude et mesure des caractéristiques d'un support de transmission pour valider ses performances théoriques.</p>
+            </a>
+            <a href="e-reputation.html" target="_blank" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="gestion-projet communication travail-equipe">
+              <h4 class="font-semibold text-white">Projet Sensibilisation : E-Réputation</h4>
+              <p class="text-slate-400 text-sm">Création d'une campagne de communication pour sensibiliser aux enjeux de l'identité numérique.</p>
+            </a>
+            <a href="nsi-jo2024.html" target="_blank" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="python gestion-projet travail-equipe">
+              <h4 class="font-semibold text-white">Projet NSI — JO 2024 (1er Prix Régional)</h4>
+              <p class="text-slate-400 text-sm">Création d'un jeu éducatif en Python, primé pour sa créativité et sa qualité technique.</p>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="bg-slate-50 py-20">
-    <div class="mx-auto max-w-3xl px-6">
-      <h2 class="mb-8 text-center text-3xl font-semibold">Contact</h2>
-      <form class="space-y-6">
-        <div>
-          <label class="block mb-2 font-medium" for="name">Nom</label>
-          <input type="text" id="name" name="name" class="w-full rounded-lg border border-slate-300 p-3 focus:border-brand focus:ring-brand" required>
+  <section id="journey" class="py-24">
+    <div class="mx-auto max-w-4xl px-6">
+        <h2 class="text-3xl font-semibold text-center mb-4">Mon Parcours</h2>
+        <p class="text-center text-ink-light max-w-3xl mx-auto mb-16">
+            Revivez les étapes clés de ma formation et de mes expériences professionnelles.
+            <br>Chaque étape est un jalon qui a renforcé mes compétences et ma détermination.
+        </p>
+        <div class="relative border-l-2 border-brand/30 ml-4">
+            <div class="mb-12 pl-12">
+                <div class="absolute -left-4 top-1 h-8 w-8 rounded-full bg-brand flex items-center justify-center ring-8 ring-light"><i class="fa-solid fa-briefcase text-white"></i></div>
+                <p class="font-semibold text-lg">Stage Réseaux & Sécurité</p>
+                <p class="text-sm text-slate-500">SophiaTech (Prévu - 2025)</p>
+                <p class="mt-2">Future mission : sécurisation d’infrastructure, monitoring et configuration de firewalls en environnement professionnel.</p>
+            </div>
+            <div class="mb-12 pl-12">
+                <div class="absolute -left-4 top-1 h-8 w-8 rounded-full bg-brand flex items-center justify-center ring-8 ring-light"><i class="fa-solid fa-graduation-cap text-white"></i></div>
+                <p class="font-semibold text-lg">BUT Réseaux & Télécommunications</p>
+                <p class="text-sm text-slate-500">IUT Nice Côte d'Azur (2023 - 2026)</p>
+                <p class="mt-2">Formation intensive couvrant l'architecture réseau, la cybersécurité, l'administration système et le développement.</p>
+            </div>
+             <div class="mb-12 pl-12">
+                <div class="absolute -left-4 top-1 h-8 w-8 rounded-full bg-brand flex items-center justify-center ring-8 ring-light"><i class="fa-solid fa-trophy text-white"></i></div>
+                <p class="font-semibold text-lg">Vainqueur Régional - Trophées NSI</p>
+                <p class="text-sm text-slate-500">2023</p>
+                <p class="mt-2">Récompense pour le projet de jeu en Python, validant mes compétences en gestion de projet et développement.</p>
+            </div>
         </div>
-        <div>
-          <label class="block mb-2 font-medium" for="email">Email</label>
-          <input type="email" id="email" name="email" class="w-full rounded-lg border border-slate-300 p-3 focus:border-brand focus:ring-brand" required>
+    </div>
+</section>
+
+  <section id="contact" class="bg-ink py-24 text-light">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h2 class="mb-4 text-3xl font-semibold">Construisons l'avenir, ensemble.</h2>
+      <p class="text-slate-400 mb-10 max-w-xl mx-auto">
+        Un projet, une opportunité d'alternance ou simplement envie de discuter technologie ? 
+        <br>N'hésitez pas à me contacter, mon clavier est prêt.
+      </p>
+      <a href="mailto:ayedsofyen7@gmail.com" class="inline-block rounded-full bg-brand px-10 py-4 font-semibold text-white shadow-lg transition hover:scale-105 hover:shadow-brand/50">Envoyez-moi un email</a>
+      <div class="mt-12">
+        <p class="text-slate-400 mb-2 text-sm">Ou retrouvez-moi sur</p>
+        <div class="flex justify-center gap-6 text-2xl">
+           <a href="https://www.linkedin.com/in/ayedsofyen/" target="_blank" class="text-slate-400 transition hover:text-brand" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+           <a href="https://github.com/Sofyenayed" target="_blank" class="text-slate-400 transition hover:text-brand" aria-label="GitHub"><i class="fab fa-github"></i></a>
         </div>
-        <div>
-          <label class="block mb-2 font-medium" for="message">Message</label>
-          <textarea id="message" name="message" rows="4" class="w-full rounded-lg border border-slate-300 p-3 focus:border-brand focus:ring-brand" required></textarea>
-        </div>
-        <button type="submit" class="rounded-full bg-brand px-8 py-3 font-semibold text-white shadow-lg transition hover:scale-105">Envoyer</button>
-      </form>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="border-t bg-slate-50 py-10 text-center">
-    <div class="mb-4 flex justify-center gap-6 text-xl">
-      <a href="https://www.linkedin.com/in/ayedsofyen/" target="_blank" class="text-ink transition hover:text-brand" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/Sofyenayed" target="_blank" class="text-ink transition hover:text-brand" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    </div>
-    <p class="text-sm text-slate-500">© 2025 Sofyen Ayed. Tous droits réservés.</p>
+  <footer class="bg-ink py-6 text-center border-t border-ink-light/20">
+    <p class="text-sm text-slate-500">© 2025 Sofyen Ayed. Conçu et développé avec passion.</p>
   </footer>
 
-  <!-- Scripts -->
   <script>
-    // Burger menu
     const navToggle = document.getElementById('navToggle');
     const mobileNav = document.getElementById('mobileNav');
     navToggle.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+
+    // --- Logique de la carte interactive ---
+    const allSkills = document.querySelectorAll('.skill-tag');
+    const allProjects = document.querySelectorAll('.project-card');
+
+    allSkills.forEach(skill => {
+        skill.addEventListener('mouseenter', () => {
+            const skillId = skill.dataset.skill;
+            allProjects.forEach(project => {
+                const projectSkills = project.dataset.projectUses.split(' ');
+                if (!projectSkills.includes(skillId)) {
+                    project.classList.add('dimmed');
+                }
+            });
+        });
+
+        skill.addEventListener('mouseleave', () => {
+            allProjects.forEach(project => project.classList.remove('dimmed'));
+        });
+    });
+
+    allProjects.forEach(project => {
+        project.addEventListener('mouseenter', () => {
+            const projectSkills = project.dataset.projectUses.split(' ');
+            allSkills.forEach(skill => {
+                if (projectSkills.includes(skill.dataset.skill)) {
+                    skill.classList.add('highlight');
+                } else {
+                    skill.classList.add('dimmed');
+                }
+            });
+        });
+
+        project.addEventListener('mouseleave', () => {
+            allSkills.forEach(skill => {
+                skill.classList.remove('highlight');
+                skill.classList.remove('dimmed');
+            });
+        });
+    });
   </script>
 </body>
 </html>

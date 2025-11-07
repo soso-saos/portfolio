@@ -6,27 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Poppins', 'sans-serif'] },
+          colors: { 
+            brand: { DEFAULT: '#ff6b6b' },
+            ink: { DEFAULT: '#0f172a' },
+            light: '#f8fafc',
+          }
+        },
+      },
+    };
+  </script>
 </head>
-<body class="font-sans antialiased bg-white text-ink">
-  <div class="max-w-3xl mx-auto px-4 py-10">
-    <a href="index.html" class="text-brand hover:underline">&larr; Retour aux projets</a>
-    <h1 class="text-3xl font-bold mt-6 mb-2 text-brand">Projet Réseau SAE21</h1>
-    <p class="mb-6 text-slate-700">Conception complète et sécurisée du réseau d’une PME sur Cisco Packet Tracer.</p>
-    <img src="projet3.png" alt="Projet Réseau SAE21" class="rounded-xl shadow mb-8 w-full max-w-lg mx-auto" />
-    <h2 class="text-xl font-semibold mb-2">Résumé du projet</h2>
-    <p class="mb-4">
-      Réalisation d’une architecture réseau complète pour une PME, incluant VLAN, routage, DMZ, NAT, services DHCP/DNS et sécurisation via firewall. 
-      <br>Le projet a nécessité la création de schémas, la documentation technique et une démonstration vidéo du déploiement.
-    </p>
-    <h2 class="text-xl font-semibold mb-2">Compétences mobilisées</h2>
-    <ul class="list-disc ml-6 mb-4">
-      <li>Conception et configuration réseau (Cisco Packet Tracer)</li>
-      <li>Sécurité informatique (pare-feu, DMZ, NAT)</li>
-      <li>Documentation technique</li>
-      <li>Déploiement et démonstration</li>
-    </ul>
-    <h2 class="text-xl font-semibold mb-2">Livrables</h2>
-    <ul class="list-disc ml-6 mb-4">
-      <li><a href="SAE21_AYED_GHAZEL_BIN-ARIFFIN.pkt" class="text-brand underline" target="_blank">Fichier shéma d'architecture réseaux </a></li>
-      <li><a href="SAE21_Rapport_Commenté_Complet.pdf" class="text-brand underline" target="_blank">Documentation complète</a></li>
-    </ul>
+<body class="font-sans antialiased bg-light text-ink">
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <a href="index.html" class="text-brand font-semibold hover:underline">&larr; Retour au portfolio</a>
+    <h1 class="text-4xl font-bold mt-8 mb-2 text-ink">Étude de Cas : <span class="text-brand">Architecture Réseau PME</span></h1>
+    <p class="mb-8 text-lg text-ink/70">Conception et sécurisation complètes du réseau d’une PME sur Cisco Packet Tracer.</p>
+    <img src="projet3.png" alt="Schéma d'architecture réseau" class="rounded-xl shadow-lg mb-12 w-full max-w-lg mx-auto border" />
+
+    <div class="space-y-10">
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">1</span>Le Défi</h2>
+        <p class="text-ink/80">L'objectif était de bâtir de A à Z l'infrastructure réseau simulée d'une PME en suivant un cahier des charges strict. Le projet exigeait non seulement la mise en place des services essentiels (DHCP, DNS), mais aussi une forte dimension de sécurité pour protéger les actifs internes tout en exposant un service web sur Internet.</p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">2</span>La Solution Technique</h2>
+        <ul class="list-disc ml-6 space-y-2 text-ink/80">
+            <li><strong>Segmentation (VLANs) :</strong> J'ai créé plusieurs VLANs pour isoler les flux de données entre les départements (direction, technique, etc.), améliorant ainsi la sécurité et la performance.</li>
+            <li><strong>Sécurité Périmétrique (Cisco ASA) :</strong> J'ai déployé un pare-feu avec des règles de filtrage précises (ACLs) pour contrôler strictement le trafic entre Internet, le réseau interne et la DMZ.</li>
+            <li><strong>Zone Démilitarisée (DMZ) :</strong> J'ai mis en place une zone réseau isolée pour héberger le serveur web, le protégeant des menaces directes tout en le rendant accessible de l'extérieur.</li>
+            <li><strong>Translation d'Adresses (NAT) :</strong> J'ai configuré le NAT statique pour le serveur web et le NAT dynamique (PAT) pour permettre aux employés de naviguer sur Internet de manière sécurisée.</li>
+        </ul>
+      </div>
+       <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">3</span>Les Résultats & Apprentissages</h2>
+        <p class="text-ink/80">Le résultat est une infrastructure réseau simulée, entièrement fonctionnelle, sécurisée et documentée, qui démontre une maîtrise complète des concepts fondamentaux de l'administration réseau et de la cybersécurité. Ce projet m'a permis de mettre en pratique la théorie et de comprendre les enjeux d'une conception réseau réfléchie.</p>
+      </div>
+    </div>
+    
+    <div class="mt-16 text-center">
+      <a href="index.html" class="inline-block rounded-full bg-brand px-8 py-3 font-semibold text-white shadow-lg transition hover:scale-105 hover:shadow-brand/50">Retour au portfolio</a>
+    </div>
+  </div>
+</body>
+</html>
