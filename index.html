@@ -2,9 +2,9 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Sofyen Ayed — Portfolio Créatif | Développement & Réseaux</title>
+  <title>Sofyen Ayed — Portfolio Créatif | Réseaux & Sécurité</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Découvrez le portfolio interactif de Sofyen Ayed. Explorez mes projets en développement, réseau et cybersécurité et voyez comment mes compétences prennent vie." />
+  <meta name="description" content="Découvrez le portfolio interactif de Sofyen Ayed. Étudiant en R&T, passionné par la cybersécurité, les réseaux Cisco et le développement Python." />
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -73,14 +73,28 @@
       
       <div id="terminal-content" class="p-6">
         <div id="terminal-output"></div>
-        <div class="hidden items-center gap-6 mt-8" id="profile-reveal">
-            <img src="pp.jpg" alt="Portrait Sofyen Ayed" class="h-28 w-28 rounded-full object-cover border-2 border-brand" />
-            <div>
-                <h2 class="font-bold text-2xl text-white">Sofyen Ayed</h2>
-                <p class="text-brand">Architecte de Solutions Numériques</p>
-                <a href="#interactive-map" class="mt-4 inline-block rounded-md bg-brand px-6 py-2 font-sans font-semibold text-white transition hover:bg-brand/80">
-                    Explorer mes projets <i class="fa-solid fa-arrow-right ml-2"></i>
-                </a>
+        
+        <div class="hidden flex-col items-start gap-6 mt-6" id="profile-reveal">
+            
+            <div class="w-full bg-brand/10 border-l-4 border-brand p-4 rounded-r shadow-sm animate-pulse">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-briefcase text-brand text-xl mr-3"></i>
+                    <div>
+                        <p class="font-bold text-white text-sm uppercase tracking-wider">Disponible pour Stage (BUT R&T)</p>
+                        <p class="text-gray-300 text-sm">Du <span class="text-white font-semibold">7 Avril</span> au <span class="text-white font-semibold">19 Juin 2025</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <img src="pp.jpg" alt="Portrait Sofyen Ayed" class="h-28 w-28 rounded-full object-cover border-2 border-brand shadow-[0_0_20px_rgba(255,107,107,0.3)]" />
+                <div>
+                    <h2 class="font-bold text-2xl text-white">Sofyen Ayed</h2>
+                    <p class="text-brand font-mono">Architecte Réseaux & Sécurité</p>
+                    <a href="#interactive-map" class="mt-4 inline-block rounded-md bg-white text-ink px-6 py-2 font-sans font-semibold transition hover:bg-brand hover:text-white">
+                        Explorer mes projets <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
             </div>
         </div>
       </div>
@@ -92,15 +106,15 @@
             const profileReveal = document.getElementById('profile-reveal');
             
             const lines = [
-                { text: 'sofyen-ayed --init', isCommand: true, delay: 1000 },
-                { text: 'Initialisation du profil...', isCommand: false, delay: 500 },
-                { text: '<span class="text-green-400">Succès.</span> Connexion établie.', isCommand: false, delay: 1500 },
-                { text: './get-skills.sh --all', isCommand: true, delay: 1000 },
-                { text: 'Chargement des compétences :', isCommand: false, delay: 500 },
-                { text: ' <span class="text-brand">[</span> Développement Web <span class="text-brand">]</span>', isCommand: false, delay: 200 },
-                { text: ' <span class="text-brand">[</span> Ingénierie Réseau <span class="text-brand">]</span>', isCommand: false, delay: 200 },
-                { text: ' <span class="text-brand">[</span> Cybersécurité <span class="text-brand">]</span>', isCommand: false, delay: 1000 },
-                { text: 'display --profile', isCommand: true, delay: 1000 },
+                { text: 'sofyen-ayed --init', isCommand: true, delay: 500 },
+                { text: 'Initialisation du profil...', isCommand: false, delay: 200 },
+                { text: '<span class="text-green-400">Succès.</span> Connexion établie.', isCommand: false, delay: 600 },
+                { text: './get-skills.sh --all', isCommand: true, delay: 500 },
+                { text: 'Chargement des compétences :', isCommand: false, delay: 200 },
+                { text: ' <span class="text-brand">[</span> Pentesting & Sécurité <span class="text-brand">]</span>', isCommand: false, delay: 100 },
+                { text: ' <span class="text-brand">[</span> Analyse de Risques (EBIOS) <span class="text-brand">]</span>', isCommand: false, delay: 100 },
+                { text: ' <span class="text-brand">[</span> Dev Python & Automation <span class="text-brand">]</span>', isCommand: false, delay: 600 },
+                { text: 'display --profile', isCommand: true, delay: 500 },
             ];
 
             let lineIndex = 0;
@@ -142,7 +156,7 @@
                         lineIndex++;
                         setTimeout(typeLine, line.delay);
                     }
-                }, 50);
+                }, 20); 
             }
 
             function revealProfile() {
@@ -182,7 +196,6 @@
     <h2 class="mb-4 text-3xl font-semibold text-center">Mon histoire : la curiosité comme moteur.</h2>
     <p class="text-center text-ink-light max-w-3xl mx-auto mb-12">
         Découvrez qui je suis, ce qui m'anime et la double passion pour le code et les infrastructures qui façonne mon parcours.
-        <br>C'est ici que mon aventure dans le monde du numérique a commencé.
     </p>
     <div class="grid gap-12 md:grid-cols-5 md:items-center">
       <div class="md:col-span-2">
@@ -193,12 +206,12 @@
           Je m'appelle <strong>Sofyen Ayed</strong>. Depuis toujours, je suis animé par une question : "Comment ça marche ?". Cette curiosité m'a d'abord poussé vers le code, pour construire des applications et des sites web. Puis, elle m'a entraîné plus profondément, vers les fondations du numérique : les réseaux, la sécurité, l'infrastructure qui rend tout possible.
         </p>
         <p class="text-ink-light leading-relaxed">
-          Aujourd'hui, étudiant en <strong>BUT Réseaux & Télécommunications</strong>, je cultive cette double passion. Je suis convaincu que les meilleures solutions naissent à la croisée des chemins, entre un développement élégant et une infrastructure robuste.
+          Aujourd'hui, étudiant en <strong>BUT Réseaux & Télécommunications</strong>, je cultive cette double passion. Je suis convaincu que les meilleures solutions naissent à la croisée des chemins, entre un développement élégant et une infrastructure robuste et sécurisée.
         </p>
         <div class="flex gap-4 mt-6">
           <a href="https://www.linkedin.com/in/ayedsofyen/" target="_blank" class="text-ink text-2xl hover:text-brand transition" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
           <a href="https://github.com/Sofyenayed" target="_blank" class="text-ink text-2xl hover:text-brand transition" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="CV-Sofyen-Ayed.pdf" download class="ml-auto rounded-full border border-brand px-5 py-2 text-sm font-semibold text-brand transition hover:bg-brand hover:text-white">Télécharger mon CV</a>
+          <a href="CV_AYED_Sofyen_7avril_19juin.pdf" download class="ml-auto rounded-full border border-brand px-5 py-2 text-sm font-semibold text-brand transition hover:bg-brand hover:text-white">Télécharger mon CV</a>
         </div>
       </div>
     </div>
@@ -209,64 +222,117 @@
       <div class="text-center mb-16">
         <h2 class="text-3xl font-semibold mb-4">Mes Compétences en Action</h2>
         <p class="text-slate-400 max-w-3xl mx-auto">
-            Je ne me contente pas de lister mes compétences, je les mets en scène. 
-            <br>Survolez un savoir-faire pour illuminer les projets correspondants, et vice-versa.
+            Survolez un savoir-faire pour illuminer les projets correspondants, et vice-versa.
         </p>
       </div>
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        
         <div>
           <h3 class="font-bold text-xl mb-6 text-brand">Compétences Techniques</h3>
           <div id="skills-container-tech" class="flex flex-wrap gap-3">
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="dev-web">Développement Web (PHP, JS)</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="html-css">HTML5 / CSS3</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="python">Python</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="reseau">Architecture Réseau</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="securite">Sécurité & Firewall</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="cisco">Configuration Cisco</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="admin-sys">Administration Système</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="linux">Linux & Bash</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="analyse-signaux">Analyse de Signaux</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2" data-skill="mesures-physiques">Mesures Physiques</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="pentest">Pentest & Audit</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="securite">Sécurité & Firewall</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="grc">Gouvernance & Risques (EBIOS)</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="reseau">Architecture Réseau</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="cisco">Cisco (CCNA)</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="python">Python & Scripting</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="audio">Traitement Audio & Signal</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="docker">Docker & Virtualisation</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="linux">Linux & Bash</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="dev-web">Développement Web</span>
           </div>
+          
           <h3 class="font-bold text-xl mt-10 mb-6 text-sky-400">Compétences Humaines</h3>
            <div id="skills-container-soft" class="flex flex-wrap gap-3">
-            <span class="skill-tag cursor-pointer rounded-lg bg-sky-800 px-4 py-2" data-skill="gestion-projet">Gestion de Projet</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-sky-800 px-4 py-2" data-skill="travail-equipe">Travail d'équipe</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-sky-800 px-4 py-2" data-skill="communication">Communication & Pédagogie</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-sky-800 px-4 py-2" data-skill="rigueur">Rigueur & Analyse</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-sky-800 px-4 py-2" data-skill="documentation">Documentation Technique</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-sky-800 px-4 py-2" data-skill="autonomie">Autonomie & Initiative</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-sky-900/50 border border-sky-800 px-4 py-2" data-skill="gestion-projet">Gestion de Projet</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-sky-900/50 border border-sky-800 px-4 py-2" data-skill="travail-equipe">Travail d'équipe</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-sky-900/50 border border-sky-800 px-4 py-2" data-skill="communication">Communication & Vulgarisation</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-sky-900/50 border border-sky-800 px-4 py-2" data-skill="rigueur">Rigueur & Analyse</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-sky-900/50 border border-sky-800 px-4 py-2" data-skill="documentation">Documentation Technique</span>
+            <span class="skill-tag cursor-pointer rounded-lg bg-sky-900/50 border border-sky-800 px-4 py-2" data-skill="autonomie">Autonomie</span>
           </div>
         </div>
 
         <div>
-          <h3 class="font-bold text-xl mb-6 text-brand">Mes Créations (Ordre Chronologique)</h3>
+          <h3 class="font-bold text-xl mb-6 text-brand">Mes Réalisations</h3>
           <div id="projects-container" class="space-y-6">
-            <a href="thales.html" target="_blank" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="dev-web gestion-projet documentation securite travail-equipe html-css">
-              <h4 class="font-semibold text-white">Projet Thales Alenia Space</h4>
-              <p class="text-slate-400 text-sm">Développement d'un site web PHP sécurisé pour piloter un banc avionique intelligent.</p>
+            
+            <a href="audit-docker.html" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-brand/20 hover:border-brand relative overflow-hidden group" data-project-uses="pentest securite linux docker python rigueur documentation">
+                <div class="absolute top-0 right-0 bg-brand text-white text-xs font-bold px-2 py-1 rounded-bl">Top Projet</div>
+                <h4 class="font-semibold text-white group-hover:text-brand transition">Audit & Pentest Docker (Black Box)</h4>
+                <p class="text-slate-400 text-xs mb-2 italic">Metasploit, Nmap, Python, CVE-2017-7494</p>
+                <p class="text-slate-300 text-sm">Compromission d'une infra dockerisée via faille SambaCry (Pivot & Tunneling) jusqu'à l'escalade Root. Rapport de remédiation technique fourni.</p>
             </a>
-             <a href="sae21.html" target="_blank" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="reseau securite cisco linux documentation admin-sys rigueur">
-              <h4 class="font-semibold text-white">Projet Réseau : Architecture PME</h4>
-              <p class="text-slate-400 text-sm">Conception complète et sécurisation d'une infrastructure réseau (VLAN, Firewall, DMZ, NAT).</p>
+
+            <a href="scan-secu.html" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="securite python dev-web sqlite automatisation">
+                <h4 class="font-semibold text-white">Application Scan de Sécurité Réseau</h4>
+                <p class="text-slate-400 text-xs mb-2">Python, SQLite, Automatisation, Dashboard</p>
+                <p class="text-slate-300 text-sm">Développement d'un outil automatisé pour détecter les failles réseaux et centraliser les résultats dans une interface claire (SQLite). Amélioration de la traçabilité des audits.</p>
             </a>
-            <a href="portfolio.html" target="_blank" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="dev-web gestion-projet html-css autonomie">
-              <h4 class="font-semibold text-white">Projet Méta : Ce Portfolio</h4>
-              <p class="text-slate-400 text-sm">Conception et développement du présent portfolio comme outil de communication et démonstration technique.</p>
+
+            <a href="ebios.html" class="project-card block p-5 rounded-xl bg-slate-800 border border-transparent hover:border-blue-400/50" data-project-uses="securite grc gestion-projet rigueur">
+                <div class="flex items-center gap-2 mb-2">
+                    <i class="fa-solid fa-shield-halved text-blue-400"></i>
+                    <h4 class="font-semibold text-white">Certification EBIOS Risk Manager</h4>
+                </div>
+                <p class="text-slate-400 text-xs mb-1">Délivrée par l'ANSSI</p>
+                <p class="text-slate-300 text-xs">Maîtrise de la méthode d'analyse de risques (Gouvernance, Scénarios de menaces, Parties prenantes).</p>
             </a>
-            <a href="coaxial.html" target="_blank" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="documentation reseau analyse-signaux mesures-physiques rigueur">
-              <h4 class="font-semibold text-white">Projet Analyse Physique : Câble Coaxial</h4>
-              <p class="text-slate-400 text-sm">Étude et mesure des caractéristiques d'un support de transmission pour valider ses performances théoriques.</p>
+
+            <a href="audio-dsp.html" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="python audio linux dev-web rigueur">
+                <h4 class="font-semibold text-white">Station de Mixage & DSP Audio (Python)</h4>
+                <p class="text-slate-400 text-xs mb-2">Python 3, GStreamer, ipywidgets, Subprocess</p>
+                <p class="text-slate-300 text-sm">Interface GUI interactive pilotant un moteur audio industriel en temps réel. Conversion, spatialisation et manipulation de signaux via architecture modulaire.</p>
             </a>
-            <a href="e-reputation.html" target="_blank" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="gestion-projet communication travail-equipe">
-              <h4 class="font-semibold text-white">Projet Sensibilisation : E-Réputation</h4>
-              <p class="text-slate-400 text-sm">Création d'une campagne de communication pour sensibiliser aux enjeux de l'identité numérique.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="ccna.html" class="project-card block p-5 rounded-xl bg-slate-800 border border-transparent hover:border-green-500/50" data-project-uses="reseau cisco securite">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="fa-solid fa-certificate text-green-400"></i>
+                        <h4 class="font-semibold text-white">Cisco CCNA 2</h4>
+                    </div>
+                    <p class="text-slate-400 text-xs mb-1">Obtenue le 16 Déc. 2025</p>
+                    <p class="text-slate-300 text-xs">Switching, Routing & Wireless Essentials. Maîtrise des VLANs, STP, et sécurité LAN.</p>
+                </a>
+                <a href="ccna.html" class="project-card block p-5 rounded-xl bg-slate-800 border border-transparent hover:border-green-500/50" data-project-uses="reseau cisco">
+                     <div class="flex items-center gap-2 mb-2">
+                        <i class="fa-solid fa-check-circle text-green-400"></i>
+                        <h4 class="font-semibold text-white">Cisco CCNA 1</h4>
+                    </div>
+                    <p class="text-slate-400 text-xs mb-1">Obtenue le 23 Oct. 2025</p>
+                    <p class="text-slate-300 text-xs">Introduction aux réseaux. Modèle OSI, IPv4/IPv6 et config IOS de base.</p>
+                </a>
+            </div>
+
+            <a href="sae21.html" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="reseau securite cisco firewall documentation">
+                <h4 class="font-semibold text-white">Architecture Réseau Sécurisée PME</h4>
+                <p class="text-slate-400 text-xs mb-2">Cisco ASA, DMZ, OSPF, VLANs</p>
+                <p class="text-slate-300 text-sm">Conception complète d'une infra résiliente. Focus sur la sécurité périmétrique (Firewall ASA + DMZ étanche) et segmentation.</p>
             </a>
-            <a href="nsi-jo2024.html" target="_blank" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="python gestion-projet travail-equipe">
-              <h4 class="font-semibold text-white">Projet NSI — JO 2024 (1er Prix Régional)</h4>
-              <p class="text-slate-400 text-sm">Création d'un jeu éducatif en Python, primé pour sa créativité et sa qualité technique.</p>
+
+            <a href="conciergerie.html" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="dev-web html-css gestion-projet communication">
+                <h4 class="font-semibold text-white">Site Conciergerie de Luxe (Monaco)</h4>
+                <p class="text-slate-400 text-xs mb-2">Freelance / Projet Réel</p>
+                <p class="text-slate-300 text-sm">Conception et déploiement d'un site vitrine pour une société de services. Design élégant et optimisation pour la clientèle locale.</p>
             </a>
+
+            <a href="tv-num.html" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="audio analyse-signaux rigueur">
+                <h4 class="font-semibold text-white">Transmission TV Numérique (SAÉ 31)</h4>
+                <p class="text-slate-400 text-xs mb-2">Analyseur de Spectre, DVB-T/S, QAM</p>
+                <p class="text-slate-300 text-sm">Validation de la chaîne de transmission. Analyse des modulations (constellation) et qualification du signal (MER > 30dB).</p>
+            </a>
+            
+             <a href="portfolio.html" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="dev-web html-css gestion-projet autonomie">
+                <h4 class="font-semibold text-white">Méta-Projet : Ce Portfolio</h4>
+                <p class="text-slate-300 text-sm">Développement front-end (HTML/Tailwind/JS) pour créer une vitrine interactive connectant compétences et réalisations.</p>
+            </a>
+            
+             <a href="nsi-jo2024.html" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="python gestion-projet travail-equipe">
+              <h4 class="font-semibold text-white">Jeu NSI — JO 2024 (1er Prix Régional)</h4>
+              <p class="text-slate-300 text-sm">Création d'un jeu éducatif en Python. Récompensé pour la créativité et la qualité technique.</p>
+            </a>
+
           </div>
         </div>
       </div>
@@ -277,15 +343,14 @@
     <div class="mx-auto max-w-4xl px-6">
         <h2 class="text-3xl font-semibold text-center mb-4">Mon Parcours</h2>
         <p class="text-center text-ink-light max-w-3xl mx-auto mb-16">
-            Revivez les étapes clés de ma formation et de mes expériences professionnelles.
-            <br>Chaque étape est un jalon qui a renforcé mes compétences et ma détermination.
+            Chaque étape est un jalon qui a renforcé mes compétences et ma détermination.
         </p>
         <div class="relative border-l-2 border-brand/30 ml-4">
             <div class="mb-12 pl-12">
-                <div class="absolute -left-4 top-1 h-8 w-8 rounded-full bg-brand flex items-center justify-center ring-8 ring-light"><i class="fa-solid fa-briefcase text-white"></i></div>
-                <p class="font-semibold text-lg">Stage Réseaux & Sécurité</p>
-                <p class="text-sm text-slate-500">SophiaTech (Prévu - 2025)</p>
-                <p class="mt-2">Future mission : sécurisation d’infrastructure, monitoring et configuration de firewalls en environnement professionnel.</p>
+                <div class="absolute -left-4 top-1 h-8 w-8 rounded-full bg-brand flex items-center justify-center ring-8 ring-light"><i class="fa-solid fa-laptop-code text-white"></i></div>
+                <p class="font-semibold text-lg">Stage Technique (Recherche active)</p>
+                <p class="text-sm text-slate-500">Du 7 avril au 19 juin 2025</p>
+                <p class="mt-2">À la recherche d'une opportunité pour appliquer mes compétences en administration réseaux, sécurité et pentesting.</p>
             </div>
             <div class="mb-12 pl-12">
                 <div class="absolute -left-4 top-1 h-8 w-8 rounded-full bg-brand flex items-center justify-center ring-8 ring-light"><i class="fa-solid fa-graduation-cap text-white"></i></div>
@@ -307,8 +372,8 @@
     <div class="mx-auto max-w-3xl px-6 text-center">
       <h2 class="mb-4 text-3xl font-semibold">Construisons l'avenir, ensemble.</h2>
       <p class="text-slate-400 mb-10 max-w-xl mx-auto">
-        Un projet, une opportunité d'alternance ou simplement envie de discuter technologie ? 
-        <br>N'hésitez pas à me contacter, mon clavier est prêt.
+        Je suis disponible pour un stage du 7 avril au 19 juin. 
+        <br>N'hésitez pas à me contacter pour échanger sur vos projets.
       </p>
       <a href="mailto:ayedsofyen7@gmail.com" class="inline-block rounded-full bg-brand px-10 py-4 font-semibold text-white shadow-lg transition hover:scale-105 hover:shadow-brand/50">Envoyez-moi un email</a>
       <div class="mt-12">

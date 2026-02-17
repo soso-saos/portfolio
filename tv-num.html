@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Transmission TV Numérique — Sofyen Ayed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Poppins', 'sans-serif'] },
+            colors: { brand: { DEFAULT: '#ff6b6b' }, ink: { DEFAULT: '#0f172a' }, light: '#f8fafc' }
+          },
+        },
+      };
+  </script>
+</head>
+<body class="font-sans antialiased bg-light text-ink">
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <a href="index.html" class="text-brand font-semibold hover:underline">&larr; Retour au portfolio</a>
+    <h1 class="text-4xl font-bold mt-8 mb-2 text-ink">Analyse Signaux : <span class="text-brand">Transmission TV Numérique</span></h1>
+    <p class="mb-8 text-lg text-ink/70">Validation et qualification d'une chaîne de transmission DVB-T/S.</p>
+
+    <div class="space-y-10">
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">1</span>Objectifs (SAÉ 31)</h2>
+        <p class="text-ink/80">L'objectif était d'étudier la chaîne complète de transmission de la télévision numérique, de la réception satellite (DVB-S) à la diffusion terrestre (DVB-T). Il fallait valider la qualité du signal reçu et comprendre les mécanismes de modulation complexes (QAM).</p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">2</span>Méthodologie & Outils</h2>
+        <ul class="list-disc ml-6 space-y-2 text-ink/80">
+            <li><strong>Analyseur de Spectre :</strong> Utilisation d'un mesureur de champ (Televes H30) pour visualiser le spectre fréquentiel.</li>
+            <li><strong>Analyse de Constellation :</strong> Visualisation des diagrammes de constellation (64-QAM) pour détecter le bruit et les distorsions de phase.</li>
+            <li><strong>Mesures de Qualité :</strong> Relevé des taux d'erreur binaire (BER) et du taux d'erreur de modulation (MER) pour qualifier la robustesse du lien.</li>
+        </ul>
+      </div>
+       <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">3</span>Résultats</h2>
+        <p class="text-ink/80">Diagnostic complet de la réception de plusieurs multiplex TNT. J'ai pu valider que le MER était supérieur à 30dB, garantissant une image stable ("quasi-sans erreur" avant correction Viterbi/Reed-Solomon).</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

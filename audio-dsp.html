@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Station DSP Audio Python — Sofyen Ayed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Poppins', 'sans-serif'] },
+            colors: { brand: { DEFAULT: '#ff6b6b' }, ink: { DEFAULT: '#0f172a' }, light: '#f8fafc' }
+          },
+        },
+      };
+  </script>
+</head>
+<body class="font-sans antialiased bg-light text-ink">
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <a href="index.html" class="text-brand font-semibold hover:underline">&larr; Retour au portfolio</a>
+    <h1 class="text-4xl font-bold mt-8 mb-2 text-ink">Projet Ingénierie : <span class="text-brand">Station de Mixage & DSP Audio</span></h1>
+    <p class="mb-8 text-lg text-ink/70">Interface graphique interactive pour le pilotage temps réel de flux audio industriels.</p>
+
+    <div class="space-y-10">
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">1</span>Le Défi</h2>
+        <p class="text-ink/80">Développer une application capable de manipuler des signaux audio en temps réel (changement de vitesse, spatialisation, gain) sans latence perceptible. L'enjeu était d'interfacer un langage de haut niveau (Python) avec un moteur multimédia bas niveau performant.</p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">2</span>La Stack Technique</h2>
+        <ul class="list-disc ml-6 space-y-2 text-ink/80">
+            <li><strong>Langage :</strong> Python 3.</li>
+            <li><strong>Moteur Audio :</strong> GStreamer 1.0 (Framework pipeline multimédia).</li>
+            <li><strong>Interface (GUI) :</strong> ipywidgets (Intégration Web/Jupyter).</li>
+            <li><strong>Système :</strong> Module <code>subprocess</code> pour le pilotage des processus système et bibliothèque <code>glob</code> pour la gestion dynamique des fichiers.</li>
+        </ul>
+      </div>
+       <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">3</span>Résultats</h2>
+        <p class="text-ink/80">L'application finale permet le transcodage et le ré-échantillonnage de formats audio à la volée. J'ai conçu une architecture modulaire qui permet d'ajouter de nouveaux effets DSP (Digital Signal Processing) sans refondre le cœur de l'application.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

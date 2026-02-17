@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>App Scan Sécurité — Sofyen Ayed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Poppins', 'sans-serif'] },
+            colors: { brand: { DEFAULT: '#ff6b6b' }, ink: { DEFAULT: '#0f172a' }, light: '#f8fafc' }
+          },
+        },
+      };
+  </script>
+</head>
+<body class="font-sans antialiased bg-light text-ink">
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <a href="index.html" class="text-brand font-semibold hover:underline">&larr; Retour au portfolio</a>
+    <h1 class="text-4xl font-bold mt-8 mb-2 text-ink">Développement : <span class="text-brand">Scanner de Sécurité Automatisé</span></h1>
+    <p class="mb-8 text-lg text-ink/70">Outil Python pour la détection de vulnérabilités et la centralisation des logs.</p>
+    
+    <div class="space-y-10">
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">1</span>Le Besoin</h2>
+        <p class="text-ink/80">Les audits manuels sont longs et les résultats souvent éparpillés. L'objectif était de créer une solution capable de scanner automatiquement un réseau local, de détecter les ports ouverts et services vulnérables, et d'historiser ces données pour suivre l'évolution de la sécurité dans le temps.</p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">2</span>Architecture de la Solution</h2>
+        <ul class="list-disc ml-6 space-y-2 text-ink/80">
+            <li><strong>Moteur de Scan (Python) :</strong> Utilisation de bibliothèques sockets et scapy pour mapper le réseau.</li>
+            <li><strong>Base de Données (SQLite) :</strong> Conception d'un schéma relationnel pour stocker les scans, les hôtes et les vulnérabilités détectées.</li>
+            <li><strong>Interface / Reporting :</strong> Génération de rapports lisibles permettant à un administrateur de visualiser rapidement les points critiques.</li>
+        </ul>
+      </div>
+       <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">3</span>Compétences Développées</h2>
+        <p class="text-ink/80">Ce projet a renforcé ma maîtrise de <strong>Python</strong> appliqué au réseau (Network Programming) et ma capacité à concevoir des architectures logicielles complètes, du script backend jusqu'à la persistance des données.</p>
+      </div>
+    </div>
+    
+    <div class="mt-16 text-center">
+      <a href="https://github.com/Sofyenayed" target="_blank" class="inline-block rounded-full bg-slate-800 px-8 py-3 font-semibold text-white shadow-lg transition hover:bg-slate-700">Voir le code sur GitHub <i class="fab fa-github ml-2"></i></a>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+</body>
+</html>

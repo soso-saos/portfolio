@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Audit & Pentest Docker — Sofyen Ayed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Poppins', 'sans-serif'] },
+          colors: { brand: { DEFAULT: '#ff6b6b' }, ink: { DEFAULT: '#0f172a' }, light: '#f8fafc' }
+        },
+      },
+    };
+  </script>
+</head>
+<body class="font-sans antialiased bg-light text-ink">
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <a href="index.html" class="text-brand font-semibold hover:underline">&larr; Retour au portfolio</a>
+    <h1 class="text-4xl font-bold mt-8 mb-2 text-ink">Projet Cyber : <span class="text-brand">Audit & Pentest Docker</span></h1>
+    <p class="mb-8 text-lg text-ink/70">Audit Black Box d'une infrastructure conteneurisée et exploitation de vulnérabilités.</p>
+    
+
+    <img src="capture_sae34.png" alt="Capture d'écran" class="w-full h-auto rounded-lg" />
+
+    <div class="space-y-10">
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">1</span>Contexte & Objectifs</h2>
+        <p class="text-ink/80">Dans un environnement simulé reproduisant une infrastructure d'entreprise, l'objectif était de réaliser un audit "Black Box" (sans information préalable) sur un réseau Docker segmenté. Ce réseau exposait un service de partage de fichiers (Samba) et une application web interne.</p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">2</span>Le Défi Technique</h2>
+        <p class="text-ink/80 mb-4">Le challenge principal résidait dans le mouvement latéral (Pivoting). Une fois entré dans le réseau, il fallait :</p>
+        <ul class="list-disc ml-6 space-y-2 text-ink/80">
+            <li>Identifier et exploiter la faille <strong>SambaCry (CVE-2017-7494)</strong> pour obtenir un premier accès.</li>
+            <li>Mettre en place un <strong>tunneling</strong> pour atteindre les machines du réseau interne, invisibles depuis l'extérieur.</li>
+            <li>Réaliser une <strong>escalade de privilèges</strong> pour obtenir les droits <code>root</code> sur l'ensemble des conteneurs.</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">3</span>Stack Technique & Outils</h2>
+        <div class="flex flex-wrap gap-2 mt-2">
+            <span class="bg-slate-200 px-3 py-1 rounded text-sm font-semibold">Metasploit Framework</span>
+            <span class="bg-slate-200 px-3 py-1 rounded text-sm font-semibold">Nmap / Zenmap</span>
+            <span class="bg-slate-200 px-3 py-1 rounded text-sm font-semibold">Python (Scripting Exploit)</span>
+            <span class="bg-slate-200 px-3 py-1 rounded text-sm font-semibold">Wireshark (Analyse trafic)</span>
+            <span class="bg-slate-200 px-3 py-1 rounded text-sm font-semibold">Docker</span>
+        </div>
+      </div>
+       <div>
+        <h2 class="text-2xl font-semibold mb-3 border-b-2 border-brand/30 pb-2 flex items-center gap-3"><span class="text-brand font-bold text-3xl">4</span>Résultats & Livrables</h2>
+        <p class="text-ink/80 mb-6">L'audit a permis de compromettre intégralement l'infrastructure (accès Root validé sur les 2 machines cibles). J'ai produit un rapport technique détaillant chaque étape de la "Kill Chain" et proposant des correctifs précis (patching Samba, restriction des droits Sudo, durcissement des configurations Docker).</p>
+        
+        <div class="bg-brand/10 p-6 rounded-lg border border-brand flex items-center gap-4">
+            <div class="text-3xl text-brand"><i class="fa-solid fa-file-pdf"></i></div>
+            <div>
+                <h4 class="font-bold text-ink">Rapport de Pentest</h4>
+                <p class="text-sm text-ink/70">Consulter le rapport complet (Anonymisé)</p>
+            </div>
+            <button class="ml-auto bg-brand text-white px-4 py-2 rounded-lg font-semibold hover:bg-brand/80">Télécharger PDF</button>
+        </div>
+        <a href="SAE34_Pentest_AYED.pdf" download class="text-brand font-semibold hover:underline">Télécharger le rapport SA Pentest</a>
+        <a href="ebios.html" download class="text-brand font-semibold hover:underline">Télécharger l'attestation</a>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Certifications Cisco CCNA — Sofyen Ayed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+  <script>
+    tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Poppins', 'sans-serif'] },
+            colors: { brand: { DEFAULT: '#ff6b6b' }, ink: { DEFAULT: '#0f172a' }, light: '#f8fafc' }
+          },
+        },
+      };
+  </script>
+</head>
+<body class="font-sans antialiased bg-light text-ink">
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <a href="index.html" class="text-brand font-semibold hover:underline">&larr; Retour au portfolio</a>
+    <h1 class="text-4xl font-bold mt-8 mb-2 text-ink">Certifications : <span class="text-brand">Cisco CCNA</span></h1>
+    <p class="mb-8 text-lg text-ink/70">Validation des compétences en architecture réseau, routing et switching.</p>
+
+    <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 mb-10 relative overflow-hidden">
+        <div class="absolute top-0 right-0 bg-green-500 text-white px-3 py-1 rounded-bl text-sm font-bold">Validé</div>
+        <div class="flex items-center gap-4 mb-4">
+            <i class="fa-solid fa-network-wired text-4xl text-brand"></i>
+            <div>
+                <h2 class="text-2xl font-bold">CCNA 2 : Switching, Routing, and Wireless Essentials</h2>
+                <p class="text-sm text-slate-500">Obtenue le 16 Décembre 2025</p>
+            </div>
+        </div>
+        <div class="mb-6">
+            <h3 class="font-semibold text-lg mb-2">Compétences Validées :</h3>
+            <ul class="list-disc ml-5 text-ink/80 space-y-1">
+                <li><strong>VLANs & Trunking :</strong> Segmentation de réseau et protocole 802.1Q.</li>
+                <li><strong>Spanning Tree (STP) :</strong> Prévention des boucles et redondance de liens.</li>
+                <li><strong>Routage Inter-VLAN :</strong> Configuration "Router-on-a-Stick" et Layer 3 Switching.</li>
+                <li><strong>Sécurité L2 :</strong> Port Security, DHCP Snooping, protection ARP.</li>
+            </ul>
+        </div>
+        <a href="CCNA2.pdf" class="inline-flex items-center text-brand font-semibold hover:underline">Voir le certificat <i class="fa-solid fa-external-link-alt ml-2"></i></a>
+    </div>
+
+    <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 mb-10 relative overflow-hidden opacity-90">
+        <div class="absolute top-0 right-0 bg-green-500 text-white px-3 py-1 rounded-bl text-sm font-bold">Validé</div>
+        <div class="flex items-center gap-4 mb-4">
+            <i class="fa-solid fa-server text-4xl text-slate-400"></i>
+            <div>
+                <h2 class="text-2xl font-bold">CCNA 1 : Introduction to Networks</h2>
+                <p class="text-sm text-slate-500">Obtenue le 23 Octobre 2025</p>
+            </div>
+        </div>
+        <div class="mb-6">
+            <h3 class="font-semibold text-lg mb-2">Compétences Validées :</h3>
+            <ul class="list-disc ml-5 text-ink/80 space-y-1">
+                <li>Modèle OSI et TCP/IP.</li>
+                <li>Adressage IPv4 / IPv6 et Subnetting.</li>
+                <li>Configuration de base des équipements Cisco IOS (CLI).</li>
+            </ul>
+        </div>
+        <a href="CCNA1.pdf" class="inline-flex items-center text-brand font-semibold hover:underline">Voir le certificat <i class="fa-solid fa-external-link-alt ml-2"></i></a>
+    </div>
+  </div>
+</body>
+</html>
