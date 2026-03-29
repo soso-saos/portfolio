@@ -2,438 +2,721 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Sofyen Ayed — Portfolio Créatif | Réseaux & Sécurité</title>
+  <title>Sofyen Ayed — Portfolio BUT R&T | Réseaux, Télécommunications & Cybersécurité</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Découvrez le portfolio interactif de Sofyen Ayed. Étudiant en R&T, passionné par la cybersécurité, les réseaux Cisco et le développement Python." />
+  <meta name="description" content="Portfolio de Sofyen Ayed, étudiant en 2ᵉ année de BUT Réseaux & Télécommunications à l'IUT Nice Côte d'Azur." />
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;0,9..40,800;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { 
-            sans: ['Poppins', 'sans-serif'],
-            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace']
+          fontFamily: {
+            sans: ['"DM Sans"','sans-serif'],
+            mono: ['"DM Mono"','monospace']
           },
-          colors: { 
-            brand: { DEFAULT: '#ff6b6b', light: '#ffa0a0' },
-            ink: { DEFAULT: '#0f172a', light: '#334155' },
-            light: '#f8fafc',
-          },
-          animation: {
-            'gradient-bg': 'gradient-bg 15s ease infinite',
-          },
-          keyframes: {
-            'gradient-bg': {
-              '0%, 100%': { backgroundPosition: '0% 50%' },
-              '50%': { backgroundPosition: '100% 50%' },
-            },
+          colors: {
+            brand : { DEFAULT:'#ef4444', dark:'#b91c1c' },
+            night : { DEFAULT:'#09090b', card:'#18181b', border:'#27272a', muted:'#52525b' },
+            chalk : { DEFAULT:'#fafafa', dim:'#a1a1aa' }
           }
-        },
-      },
+        }
+      }
     };
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
   <style>
-    .skill-tag { transition: all 0.2s ease-in-out; }
-    .project-card { transition: all 0.3s ease-in-out; }
-    .highlight { background-color: #ff6b6b !important; color: white !important; transform: scale(1.05); box-shadow: 0 0 15px rgba(255, 107, 107, 0.7); }
-    .dimmed { opacity: 0.3; }
+    html { scroll-behavior:smooth; }
+    ::-webkit-scrollbar { width:5px; }
+    ::-webkit-scrollbar-track { background:#09090b; }
+    ::-webkit-scrollbar-thumb { background:#ef4444; border-radius:99px; }
+
+    @keyframes blink { 0%,100%{opacity:0} 50%{opacity:1} }
+    .cursor { display:inline-block; animation:blink 1s step-end infinite; }
+
+    .sk-tag { transition:all .22s ease; cursor:pointer; }
+    .proj-c { transition:all .28s ease; }
+    .sk-lit  { background:#ef4444 !important; color:#fff !important; border-color:transparent !important; transform:scale(1.07); box-shadow:0 0 18px rgba(239,68,68,.4); }
+    .dimmed  { opacity:.15; pointer-events:none; }
+
+    .fbtn { padding:.3rem .85rem; border-radius:9999px; font-size:.7rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; border:1px solid #27272a; color:#71717a; background:transparent; cursor:pointer; transition:all .18s; }
+    .fbtn:hover { border-color:#ef4444; color:#ef4444; }
+    .fbtn.on { background:#ef4444; border-color:#ef4444; color:#fff; }
+    .proj-hide { display:none !important; }
+
+    .nav-l.active { color:#ef4444; }
+
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .65s ease, transform .65s ease; }
+    .reveal.in { opacity:1; transform:none; }
+
+    .proj-c:hover { border-color:rgba(239,68,68,.45) !important; box-shadow:0 4px 28px rgba(239,68,68,.1); }
+
+    .badge { display:inline-flex; align-items:center; gap:.3rem; padding:.15rem .6rem; border-radius:9999px; font-size:.65rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+    .b-red   { background:rgba(239,68,68,.12);  color:#ef4444; border:1px solid rgba(239,68,68,.25); }
+    .b-blue  { background:rgba(59,130,246,.12); color:#60a5fa; border:1px solid rgba(59,130,246,.25); }
+    .b-green { background:rgba(34,197,94,.12);  color:#4ade80; border:1px solid rgba(34,197,94,.25); }
+    .b-amber { background:rgba(245,158,11,.12); color:#fbbf24; border:1px solid rgba(245,158,11,.25); }
+    .b-slate { background:rgba(100,116,139,.12);color:#94a3b8; border:1px solid rgba(100,116,139,.25); }
+
+    .tl-dot { box-shadow:0 0 0 8px #09090b; }
   </style>
 </head>
-<body class="font-sans antialiased bg-light text-ink scroll-smooth">
 
-  <header class="fixed inset-x-0 top-0 z-50 bg-light/80 backdrop-blur shadow-sm">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-      <a class="text-xl font-bold tracking-tight" href="#home">Sofyen <span class="text-brand">Ayed</span></a>
-      <nav class="hidden gap-8 text-sm font-semibold md:flex">
-        <a class="hover:text-brand" href="#story">Mon Histoire</a>
-        <a class="hover:text-brand" href="#interactive-map">Compétences en Action</a>
-        <a class="hover:text-brand" href="#journey">Mon Parcours</a>
-        <a class="hover:text-brand" href="#contact">Contact</a>
-      </nav>
-      <button id="navToggle" class="text-2xl md:hidden"><i class="fa-solid fa-bars"></i></button>
-    </div>
-    <nav id="mobileNav" class="hidden flex-col gap-4 px-6 pb-6 md:hidden">
-       <a class="hover:text-brand" href="#story">Mon Histoire</a>
-       <a class="hover:text-brand" href="#interactive-map">Compétences en Action</a>
-       <a class="hover:text-brand" href="#journey">Mon Parcours</a>
-       <a class="hover:text-brand" href="#contact">Contact</a>
+<body class="font-sans antialiased text-chalk" style="background:#09090b;">
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header id="hdr" class="fixed inset-x-0 top-0 z-50 transition-all duration-300" style="background:transparent;">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <a href="#home" class="font-mono text-sm font-medium text-chalk/50 hover:text-brand transition">
+      sofyen.<span class="text-brand">ayed</span>()
+    </a>
+    <nav class="hidden gap-8 text-sm font-medium md:flex">
+      <a class="nav-l text-chalk/50 hover:text-chalk transition" href="#story">Histoire</a>
+      <a class="nav-l text-chalk/50 hover:text-chalk transition" href="#skills">Compétences</a>
+      <a class="nav-l text-chalk/50 hover:text-chalk transition" href="#journey">Parcours</a>
+      <a class="nav-l text-chalk/50 hover:text-chalk transition" href="#contact">Contact</a>
     </nav>
-  </header>
-
-  <section id="home" class="relative flex min-h-screen items-center justify-center overflow-hidden p-4 bg-slate-100">
-    <div id="terminal" class="w-full max-w-4xl rounded-lg shadow-2xl bg-ink font-mono text-sm text-white/90 overflow-hidden" style="min-height: 500px;">
-      <div class="bg-slate-700/50 h-9 flex items-center px-4 gap-2">
-        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-        <div class="w-3 h-3 rounded-full bg-green-500"></div>
-      </div>
-      
-      <div id="terminal-content" class="p-6">
-        <div id="terminal-output"></div>
-        
-        <div class="hidden flex-col items-start gap-6 mt-6" id="profile-reveal">
-            
-            <div class="w-full bg-brand/10 border-l-4 border-brand p-4 rounded-r shadow-sm animate-pulse">
-                <div class="flex items-center">
-                    <i class="fa-solid fa-briefcase text-brand text-xl mr-3"></i>
-                    <div>
-                        <p class="font-bold text-white text-sm uppercase tracking-wider">Disponible pour Stage (BUT R&T)</p>
-                        <p class="text-gray-300 text-sm">Du <span class="text-white font-semibold">7 Avril</span> au <span class="text-white font-semibold">19 Juin 2025</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex items-center gap-6">
-                <img src="pp.jpg" alt="Portrait Sofyen Ayed" class="h-28 w-28 rounded-full object-cover border-2 border-brand shadow-[0_0_20px_rgba(255,107,107,0.3)]" />
-                <div>
-                    <h2 class="font-bold text-2xl text-white">Sofyen Ayed</h2>
-                    <p class="text-brand font-mono">Architecte Réseaux & Sécurité</p>
-                    <a href="#interactive-map" class="mt-4 inline-block rounded-md bg-white text-ink px-6 py-2 font-sans font-semibold transition hover:bg-brand hover:text-white">
-                        Explorer mes projets <i class="fa-solid fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-      </div>
+    <div class="flex items-center gap-3">
+      <a href="CV_AYED_Sofyen.pdf" download
+         class="hidden md:inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-brand-dark">
+        <i class="fa-solid fa-download"></i> Mon CV
+      </a>
+      <button id="burgerBtn" class="text-xl text-chalk/50 md:hidden"><i class="fa-solid fa-bars"></i></button>
     </div>
+  </div>
+  <div id="mobileMenu" class="hidden border-t border-night-border bg-night/95 px-6 pb-6 pt-4 md:hidden">
+    <nav class="flex flex-col gap-4 text-sm font-medium">
+      <a class="py-1 text-chalk/60 hover:text-brand" href="#story">Histoire</a>
+      <a class="py-1 text-chalk/60 hover:text-brand" href="#skills">Compétences</a>
+      <a class="py-1 text-chalk/60 hover:text-brand" href="#journey">Parcours</a>
+      <a class="py-1 text-chalk/60 hover:text-brand" href="#contact">Contact</a>
+      <a href="CV_AYED_Sofyen.pdf" download class="mt-2 rounded-full bg-brand py-2.5 text-center text-xs font-bold uppercase text-white">Mon CV</a>
+    </nav>
+  </div>
+</header>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const output = document.getElementById('terminal-output');
-            const profileReveal = document.getElementById('profile-reveal');
-            
-            const lines = [
-                { text: 'sofyen-ayed --init', isCommand: true, delay: 500 },
-                { text: 'Initialisation du profil...', isCommand: false, delay: 200 },
-                { text: '<span class="text-green-400">Succès.</span> Connexion établie.', isCommand: false, delay: 600 },
-                { text: './get-skills.sh --all', isCommand: true, delay: 500 },
-                { text: 'Chargement des compétences :', isCommand: false, delay: 200 },
-                { text: ' <span class="text-brand">[</span> Pentesting & Sécurité <span class="text-brand">]</span>', isCommand: false, delay: 100 },
-                { text: ' <span class="text-brand">[</span> Analyse de Risques (EBIOS) <span class="text-brand">]</span>', isCommand: false, delay: 100 },
-                { text: ' <span class="text-brand">[</span> Dev Python & Automation <span class="text-brand">]</span>', isCommand: false, delay: 600 },
-                { text: 'display --profile', isCommand: true, delay: 500 },
-            ];
+<!-- ══════════════════ HERO ══════════════════ -->
+<section id="home" class="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-28">
+  <div class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+       style="width:800px;height:800px;background:radial-gradient(circle,rgba(239,68,68,.06) 0%,transparent 65%);"></div>
+  <div class="pointer-events-none absolute inset-0 opacity-[.035]"
+       style="background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:72px 72px;"></div>
 
-            let lineIndex = 0;
-
-            function typeLine() {
-                if (lineIndex >= lines.length) {
-                    revealProfile();
-                    return;
-                }
-
-                const line = lines[lineIndex];
-                const lineElement = document.createElement('div');
-                output.appendChild(lineElement);
-                
-                if (line.isCommand) {
-                    lineElement.innerHTML = `<span class="text-cyan-400 mr-2">$</span>`;
-                }
-                
-                let charIndex = 0;
-                const typingInterval = setInterval(() => {
-                    if (charIndex < line.text.length) {
-                        lineElement.innerHTML += line.text.charAt(charIndex);
-                        charIndex++;
-                    } else {
-                        clearInterval(typingInterval);
-                        const cursor = document.createElement('span');
-                        cursor.className = 'blinking-cursor';
-                        cursor.innerHTML = '&#9646;';
-                        if (!line.isCommand) {
-                           lineElement.appendChild(cursor); 
-                        }
-                        
-                        const allLines = output.querySelectorAll('div');
-                        if (allLines.length > 1) {
-                            const prevCursor = allLines[allLines.length - 2].querySelector('.blinking-cursor');
-                            if(prevCursor) prevCursor.remove();
-                        }
-
-                        lineIndex++;
-                        setTimeout(typeLine, line.delay);
-                    }
-                }, 20); 
-            }
-
-            function revealProfile() {
-                const finalCursor = output.querySelector('.blinking-cursor');
-                if(finalCursor) finalCursor.remove();
-                
-                profileReveal.classList.remove('hidden');
-                profileReveal.classList.add('flex');
-                profileReveal.animate([
-                    { opacity: 0, transform: 'translateY(20px)' },
-                    { opacity: 1, transform: 'translateY(0)' }
-                ], {
-                    duration: 600,
-                    easing: 'ease-out',
-                    fill: 'forwards'
-                });
-            }
-
-            const style = document.createElement('style');
-            style.innerHTML = `
-                .blinking-cursor {
-                    animation: blink 1s step-end infinite;
-                }
-                @keyframes blink {
-                    from, to { color: transparent; }
-                    50% { color: white; }
-                }
-            `;
-            document.head.appendChild(style);
-
-            typeLine();
-        });
-    </script>
-  </section>
-
-  <section id="story" class="mx-auto max-w-5xl px-6 py-24">
-    <h2 class="mb-4 text-3xl font-semibold text-center">Mon histoire : la curiosité comme moteur.</h2>
-    <p class="text-center text-ink-light max-w-3xl mx-auto mb-12">
-        Découvrez qui je suis, ce qui m'anime et la double passion pour le code et les infrastructures qui façonne mon parcours.
-    </p>
-    <div class="grid gap-12 md:grid-cols-5 md:items-center">
-      <div class="md:col-span-2">
-        <img src="pp.jpg" alt="Portrait" class="mx-auto h-64 w-64 rounded-full object-cover shadow-xl" />
+  <div class="w-full max-w-4xl">
+    <!-- Terminal -->
+    <div class="overflow-hidden rounded-2xl border border-night-border shadow-2xl" style="background:#111113;box-shadow:0 0 0 1px #27272a,0 40px 100px rgba(0,0,0,.7);">
+      <!-- Titlebar -->
+      <div class="flex items-center gap-2 border-b border-night-border px-4 py-3" style="background:#18181b;">
+        <span class="h-3 w-3 rounded-full" style="background:#ff5f57;"></span>
+        <span class="h-3 w-3 rounded-full" style="background:#febc2e;"></span>
+        <span class="h-3 w-3 rounded-full" style="background:#28c840;"></span>
+        <span class="ml-4 font-mono text-xs text-night-muted">bash — sofyen@iut-nice:~/portfolio</span>
       </div>
-      <div class="md:col-span-3">
-        <p class="text-ink-light leading-relaxed mb-4">
-          Je m'appelle <strong>Sofyen Ayed</strong>. Depuis toujours, je suis animé par une question : "Comment ça marche ?". Cette curiosité m'a d'abord poussé vers le code, pour construire des applications et des sites web. Puis, elle m'a entraîné plus profondément, vers les fondations du numérique : les réseaux, la sécurité, l'infrastructure qui rend tout possible.
-        </p>
-        <p class="text-ink-light leading-relaxed">
-          Aujourd'hui, étudiant en <strong>BUT Réseaux & Télécommunications</strong>, je cultive cette double passion. Je suis convaincu que les meilleures solutions naissent à la croisée des chemins, entre un développement élégant et une infrastructure robuste et sécurisée.
-        </p>
-        <div class="flex gap-4 mt-6">
-          <a href="https://www.linkedin.com/in/ayedsofyen/" target="_blank" class="text-ink text-2xl hover:text-brand transition" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/Sofyenayed" target="_blank" class="text-ink text-2xl hover:text-brand transition" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="CV_AYED_Sofyen_7avril_19juin.pdf" download class="ml-auto rounded-full border border-brand px-5 py-2 text-sm font-semibold text-brand transition hover:bg-brand hover:text-white">Télécharger mon CV</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="interactive-map" class="bg-ink py-24 text-light">
-    <div class="mx-auto max-w-6xl px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-semibold mb-4">Mes Compétences en Action</h2>
-        <p class="text-slate-400 max-w-3xl mx-auto">
-            Survolez un savoir-faire pour illuminer les projets correspondants, et vice-versa.
-        </p>
-      </div>
-      
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        
-        <div>
-          <h3 class="font-bold text-xl mb-6 text-brand">Compétences Techniques</h3>
-          <div id="skills-container-tech" class="flex flex-wrap gap-3">
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="pentest">Pentest & Audit</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="securite">Sécurité & Firewall</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="grc">Gouvernance & Risques (EBIOS)</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="reseau">Architecture Réseau</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="cisco">Cisco (CCNA)</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="python">Python & Scripting</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="audio">Traitement Audio & Signal</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="docker">Docker & Virtualisation</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="linux">Linux & Bash</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-ink-light px-4 py-2 hover:bg-brand hover:text-white" data-skill="dev-web">Développement Web</span>
+      <!-- Content -->
+      <div class="p-6 md:p-10 font-mono text-sm">
+        <div id="term-lines" class="space-y-0.5"></div>
+        <!-- Profile revealed after animation -->
+        <div id="term-profile" class="mt-6 hidden">
+          <!-- Availability ping -->
+          <div class="mb-5 flex items-center gap-3 rounded-xl border border-brand/25 bg-brand/5 px-4 py-3">
+            <span class="relative flex h-2.5 w-2.5 flex-shrink-0">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-60"></span>
+              <span class="relative h-2.5 w-2.5 rounded-full bg-brand"></span>
+            </span>
+            <p class="font-sans text-xs text-chalk/60">
+              <span class="font-bold text-white">Stage disponible</span> — 7 Avril au 19 Juin 2026 · Réseaux / Cybersécurité
+            </p>
           </div>
-          
-          <h3 class="font-bold text-xl mt-10 mb-6 text-sky-400">Compétences Humaines</h3>
-           <div id="skills-container-soft" class="flex flex-wrap gap-3">
-            <span class="skill-tag cursor-pointer rounded-lg bg-sky-900/50 border border-sky-800 px-4 py-2" data-skill="gestion-projet">Gestion de Projet</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-sky-900/50 border border-sky-800 px-4 py-2" data-skill="travail-equipe">Travail d'équipe</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-sky-900/50 border border-sky-800 px-4 py-2" data-skill="communication">Communication & Vulgarisation</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-sky-900/50 border border-sky-800 px-4 py-2" data-skill="rigueur">Rigueur & Analyse</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-sky-900/50 border border-sky-800 px-4 py-2" data-skill="documentation">Documentation Technique</span>
-            <span class="skill-tag cursor-pointer rounded-lg bg-sky-900/50 border border-sky-800 px-4 py-2" data-skill="autonomie">Autonomie</span>
-          </div>
-        </div>
-
-        <div>
-          <h3 class="font-bold text-xl mb-6 text-brand">Mes Réalisations</h3>
-          <div id="projects-container" class="space-y-6">
-            
-            <a href="audit-docker.html" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-brand/20 hover:border-brand relative overflow-hidden group" data-project-uses="pentest securite linux docker python rigueur documentation">
-                <div class="absolute top-0 right-0 bg-brand text-white text-xs font-bold px-2 py-1 rounded-bl">Top Projet</div>
-                <h4 class="font-semibold text-white group-hover:text-brand transition">Audit & Pentest Docker (Black Box)</h4>
-                <p class="text-slate-400 text-xs mb-2 italic">Metasploit, Nmap, Python, CVE-2017-7494</p>
-                <p class="text-slate-300 text-sm">Compromission d'une infra dockerisée via faille SambaCry (Pivot & Tunneling) jusqu'à l'escalade Root. Rapport de remédiation technique fourni.</p>
-            </a>
-
-            <a href="scan-secu.html" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="securite python dev-web sqlite automatisation">
-                <h4 class="font-semibold text-white">Application Scan de Sécurité Réseau</h4>
-                <p class="text-slate-400 text-xs mb-2">Python, SQLite, Automatisation, Dashboard</p>
-                <p class="text-slate-300 text-sm">Développement d'un outil automatisé pour détecter les failles réseaux et centraliser les résultats dans une interface claire (SQLite). Amélioration de la traçabilité des audits.</p>
-            </a>
-
-            <a href="ebios.html" class="project-card block p-5 rounded-xl bg-slate-800 border border-transparent hover:border-blue-400/50" data-project-uses="securite grc gestion-projet rigueur">
-                <div class="flex items-center gap-2 mb-2">
-                    <i class="fa-solid fa-shield-halved text-blue-400"></i>
-                    <h4 class="font-semibold text-white">Certification EBIOS Risk Manager</h4>
-                </div>
-                <p class="text-slate-400 text-xs mb-1">Délivrée par l'ANSSI</p>
-                <p class="text-slate-300 text-xs">Maîtrise de la méthode d'analyse de risques (Gouvernance, Scénarios de menaces, Parties prenantes).</p>
-            </a>
-
-            <a href="audio-dsp.html" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="python audio linux dev-web rigueur">
-                <h4 class="font-semibold text-white">Station de Mixage & DSP Audio (Python)</h4>
-                <p class="text-slate-400 text-xs mb-2">Python 3, GStreamer, ipywidgets, Subprocess</p>
-                <p class="text-slate-300 text-sm">Interface GUI interactive pilotant un moteur audio industriel en temps réel. Conversion, spatialisation et manipulation de signaux via architecture modulaire.</p>
-            </a>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <a href="ccna.html" class="project-card block p-5 rounded-xl bg-slate-800 border border-transparent hover:border-green-500/50" data-project-uses="reseau cisco securite">
-                    <div class="flex items-center gap-2 mb-2">
-                        <i class="fa-solid fa-certificate text-green-400"></i>
-                        <h4 class="font-semibold text-white">Cisco CCNA 2</h4>
-                    </div>
-                    <p class="text-slate-400 text-xs mb-1">Obtenue le 16 Déc. 2025</p>
-                    <p class="text-slate-300 text-xs">Switching, Routing & Wireless Essentials. Maîtrise des VLANs, STP, et sécurité LAN.</p>
+          <!-- Identity -->
+          <div class="flex flex-wrap items-center gap-6">
+            <img src="pp.jpg" alt="Portrait Sofyen Ayed"
+                 class="h-24 w-24 flex-shrink-0 rounded-2xl border border-night-border object-cover object-top"
+                 style="box-shadow:0 0 0 1px #27272a,0 0 28px rgba(239,68,68,.22);" />
+            <div class="font-sans">
+              <h1 class="text-2xl font-black tracking-tight text-white">Sofyen Ayed</h1>
+              <p class="mt-1 text-sm font-semibold text-brand">Étudiant BUT R&T — 2ᵉ année</p>
+              <p class="text-xs text-chalk/35 mt-0.5">IUT Nice Côte d'Azur · Réseaux · Télécommunications · Cybersécurité</p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <a href="#skills" class="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2 text-xs font-bold uppercase tracking-wider text-night transition hover:bg-brand hover:text-white">
+                  Explorez mes projets <i class="fa-solid fa-arrow-right text-[10px]"></i>
                 </a>
-                <a href="ccna.html" class="project-card block p-5 rounded-xl bg-slate-800 border border-transparent hover:border-green-500/50" data-project-uses="reseau cisco">
-                     <div class="flex items-center gap-2 mb-2">
-                        <i class="fa-solid fa-check-circle text-green-400"></i>
-                        <h4 class="font-semibold text-white">Cisco CCNA 1</h4>
-                    </div>
-                    <p class="text-slate-400 text-xs mb-1">Obtenue le 23 Oct. 2025</p>
-                    <p class="text-slate-300 text-xs">Introduction aux réseaux. Modèle OSI, IPv4/IPv6 et config IOS de base.</p>
-                </a>
+                <a href="https://www.linkedin.com/in/ayedsofyen/" target="_blank"
+                   class="grid h-9 w-9 place-items-center rounded-lg border border-night-border text-chalk/40 transition hover:border-brand hover:text-brand">
+                  <i class="fab fa-linkedin text-sm"></i></a>
+                <a href="https://github.com/Sofyenayed" target="_blank"
+                   class="grid h-9 w-9 place-items-center rounded-lg border border-night-border text-chalk/40 transition hover:border-brand hover:text-brand">
+                  <i class="fab fa-github text-sm"></i></a>
+              </div>
             </div>
-
-            <a href="sae21.html" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="reseau securite cisco firewall documentation">
-                <h4 class="font-semibold text-white">Architecture Réseau Sécurisée PME</h4>
-                <p class="text-slate-400 text-xs mb-2">Cisco ASA, DMZ, OSPF, VLANs</p>
-                <p class="text-slate-300 text-sm">Conception complète d'une infra résiliente. Focus sur la sécurité périmétrique (Firewall ASA + DMZ étanche) et segmentation.</p>
-            </a>
-
-            <a href="conciergerie.html" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="dev-web html-css gestion-projet communication">
-                <h4 class="font-semibold text-white">Site Conciergerie de Luxe (Monaco)</h4>
-                <p class="text-slate-400 text-xs mb-2">Freelance / Projet Réel</p>
-                <p class="text-slate-300 text-sm">Conception et déploiement d'un site vitrine pour une société de services. Design élégant et optimisation pour la clientèle locale.</p>
-            </a>
-
-            <a href="tv-num.html" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="audio analyse-signaux rigueur">
-                <h4 class="font-semibold text-white">Transmission TV Numérique (SAÉ 31)</h4>
-                <p class="text-slate-400 text-xs mb-2">Analyseur de Spectre, DVB-T/S, QAM</p>
-                <p class="text-slate-300 text-sm">Validation de la chaîne de transmission. Analyse des modulations (constellation) et qualification du signal (MER > 30dB).</p>
-            </a>
-            
-             <a href="portfolio.html" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="dev-web html-css gestion-projet autonomie">
-                <h4 class="font-semibold text-white">Méta-Projet : Ce Portfolio</h4>
-                <p class="text-slate-300 text-sm">Développement front-end (HTML/Tailwind/JS) pour créer une vitrine interactive connectant compétences et réalisations.</p>
-            </a>
-            
-             <a href="nsi-jo2024.html" class="project-card block p-6 rounded-xl bg-ink-light/50 border border-transparent hover:border-brand/50" data-project-uses="python gestion-projet travail-equipe">
-              <h4 class="font-semibold text-white">Jeu NSI — JO 2024 (1er Prix Régional)</h4>
-              <p class="text-slate-300 text-sm">Création d'un jeu éducatif en Python. Récompensé pour la créativité et la qualité technique.</p>
-            </a>
-
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section id="journey" class="py-24">
-    <div class="mx-auto max-w-4xl px-6">
-        <h2 class="text-3xl font-semibold text-center mb-4">Mon Parcours</h2>
-        <p class="text-center text-ink-light max-w-3xl mx-auto mb-16">
-            Chaque étape est un jalon qui a renforcé mes compétences et ma détermination.
-        </p>
-        <div class="relative border-l-2 border-brand/30 ml-4">
-            <div class="mb-12 pl-12">
-                <div class="absolute -left-4 top-1 h-8 w-8 rounded-full bg-brand flex items-center justify-center ring-8 ring-light"><i class="fa-solid fa-laptop-code text-white"></i></div>
-                <p class="font-semibold text-lg">Stage Technique (Recherche active)</p>
-                <p class="text-sm text-slate-500">Du 7 avril au 19 juin 2025</p>
-                <p class="mt-2">À la recherche d'une opportunité pour appliquer mes compétences en administration réseaux, sécurité et pentesting.</p>
-            </div>
-            <div class="mb-12 pl-12">
-                <div class="absolute -left-4 top-1 h-8 w-8 rounded-full bg-brand flex items-center justify-center ring-8 ring-light"><i class="fa-solid fa-graduation-cap text-white"></i></div>
-                <p class="font-semibold text-lg">BUT Réseaux & Télécommunications</p>
-                <p class="text-sm text-slate-500">IUT Nice Côte d'Azur (2023 - 2026)</p>
-                <p class="mt-2">Formation intensive couvrant l'architecture réseau, la cybersécurité, l'administration système et le développement.</p>
-            </div>
-             <div class="mb-12 pl-12">
-                <div class="absolute -left-4 top-1 h-8 w-8 rounded-full bg-brand flex items-center justify-center ring-8 ring-light"><i class="fa-solid fa-trophy text-white"></i></div>
-                <p class="font-semibold text-lg">Vainqueur Régional - Trophées NSI</p>
-                <p class="text-sm text-slate-500">2023</p>
-                <p class="mt-2">Récompense pour le projet de jeu en Python, validant mes compétences en gestion de projet et développement.</p>
-            </div>
-        </div>
+    <div class="mt-10 text-center">
+      <p class="font-mono text-xs text-night-muted tracking-widest">↓ scroll pour découvrir</p>
     </div>
+  </div>
 </section>
 
-  <section id="contact" class="bg-ink py-24 text-light">
-    <div class="mx-auto max-w-3xl px-6 text-center">
-      <h2 class="mb-4 text-3xl font-semibold">Construisons l'avenir, ensemble.</h2>
-      <p class="text-slate-400 mb-10 max-w-xl mx-auto">
-        Je suis disponible pour un stage du 7 avril au 19 juin. 
-        <br>N'hésitez pas à me contacter pour échanger sur vos projets.
-      </p>
-      <a href="mailto:ayedsofyen7@gmail.com" class="inline-block rounded-full bg-brand px-10 py-4 font-semibold text-white shadow-lg transition hover:scale-105 hover:shadow-brand/50">Envoyez-moi un email</a>
-      <div class="mt-12">
-        <p class="text-slate-400 mb-2 text-sm">Ou retrouvez-moi sur</p>
-        <div class="flex justify-center gap-6 text-2xl">
-           <a href="https://www.linkedin.com/in/ayedsofyen/" target="_blank" class="text-slate-400 transition hover:text-brand" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-           <a href="https://github.com/Sofyenayed" target="_blank" class="text-slate-400 transition hover:text-brand" aria-label="GitHub"><i class="fab fa-github"></i></a>
+<!-- ══════════════════ HISTOIRE ══════════════════ -->
+<section id="story" class="mx-auto max-w-5xl px-6 py-28">
+  <div class="reveal mb-16">
+    <p class="font-mono text-xs text-brand mb-3">// 01 — à propos</p>
+    <h2 class="text-4xl font-black tracking-tight">Mon Histoire</h2>
+  </div>
+
+  <div class="reveal grid gap-14 md:grid-cols-5 md:items-start">
+    <!-- Photo -->
+    <div class="md:col-span-2">
+      <div class="relative max-w-xs">
+        <img src="pp.jpg" alt="Portrait Sofyen Ayed"
+             class="w-full rounded-2xl border border-night-border object-cover object-top"
+             style="aspect-ratio:4/5;object-position:center 15%;" />
+        <div class="absolute -bottom-3 -right-3 rounded-xl border border-night-border bg-night-card px-4 py-2.5 shadow-xl">
+          <p class="font-mono text-xs font-bold text-brand">BUT R&T</p>
+          <p class="font-mono text-xs text-chalk/40">Réseaux · Télécoms · Sécu</p>
+        </div>
+      </div>
+      <div class="mt-8 flex flex-col gap-2">
+        <a href="https://www.linkedin.com/in/ayedsofyen/" target="_blank"
+           class="flex items-center gap-3 rounded-xl border border-night-border px-4 py-3 text-sm font-medium text-chalk/50 transition hover:border-brand/40 hover:text-brand">
+          <i class="fab fa-linkedin w-4 text-center"></i> linkedin.com/in/ayedsofyen
+        </a>
+        <a href="https://github.com/Sofyenayed" target="_blank"
+           class="flex items-center gap-3 rounded-xl border border-night-border px-4 py-3 text-sm font-medium text-chalk/50 transition hover:border-brand/40 hover:text-brand">
+          <i class="fab fa-github w-4 text-center"></i> github.com/Sofyenayed
+        </a>
+        <a href="CV_AYED_Sofyen.pdf" download
+           class="flex items-center justify-center gap-2 rounded-xl bg-brand px-4 py-3 text-sm font-bold text-white transition hover:bg-brand-dark">
+          <i class="fa-solid fa-download"></i> Télécharger mon CV
+        </a>
+      </div>
+    </div>
+
+    <!-- Texte -->
+    <div class="md:col-span-3">
+      <div class="space-y-4 text-[0.95rem] leading-relaxed text-chalk/55">
+        <p>
+          Je m'appelle <strong class="text-white font-bold">Sofyen Ayed</strong>.
+          Ce qui m'anime, c'est une curiosité profonde pour les systèmes de communication :
+          comprendre comment l'information voyage, comment un signal se propage, et comment protéger tout ce qui circule.
+        </p>
+        <p>
+          En <strong class="text-white">BUT Réseaux &amp; Télécommunications</strong> à l'IUT Nice Côte d'Azur,
+          je développe une expertise qui couvre les trois dimensions de ma formation :
+        </p>
+        <!-- 3 piliers -->
+        <div class="grid grid-cols-1 gap-3 sm:grid-cols-3 not-prose">
+          <div class="rounded-xl border border-night-border bg-night-card p-4">
+            <p class="font-mono text-xs font-bold text-brand mb-1">Réseaux</p>
+            <p class="text-xs text-chalk/45 leading-relaxed">Architecture, routage IP, VLANs, protocoles L2/L3, Cisco IOS.</p>
+          </div>
+          <div class="rounded-xl border border-night-border bg-night-card p-4">
+            <p class="font-mono text-xs font-bold text-brand mb-1">Télécommunications</p>
+            <p class="text-xs text-chalk/45 leading-relaxed">Transmission RF, DVB-T/S, modulations (QAM), câblage, mesures physiques.</p>
+          </div>
+          <div class="rounded-xl border border-night-border bg-night-card p-4">
+            <p class="font-mono text-xs font-bold text-brand mb-1">Cybersécurité</p>
+            <p class="text-xs text-chalk/45 leading-relaxed">Audit, pentesting, analyse de risques EBIOS, sécurité des infrastructures.</p>
+          </div>
+        </div>
+        <p>
+          Je cherche à mettre ces compétences en pratique lors d'un <strong class="text-white">stage
+          du 7 avril au 19 juin 2026</strong>, dans une structure où réseaux, télécoms et sécurité sont au cœur du métier.
+        </p>
+      </div>
+
+      <!-- Stats rapides -->
+      <div class="mt-10 grid grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-night-border bg-night-card p-4 text-center">
+          <div class="text-3xl font-black text-brand">2</div>
+          <div class="mt-1 text-xs text-chalk/35 font-medium">Certifications<br>Cisco CCNA</div>
+        </div>
+        <div class="rounded-2xl border border-night-border bg-night-card p-4 text-center">
+          <div class="text-3xl font-black text-brand">1<sup class="text-base">er</sup></div>
+          <div class="mt-1 text-xs text-chalk/35 font-medium">Prix Régional<br>Trophées NSI</div>
+        </div>
+        <div class="rounded-2xl border border-night-border bg-night-card p-4 text-center">
+          <div class="text-3xl font-black text-brand">10+</div>
+          <div class="mt-1 text-xs text-chalk/35 font-medium">Projets &amp;<br>Réalisations</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="bg-ink py-6 text-center border-t border-ink-light/20">
-    <p class="text-sm text-slate-500">© 2025 Sofyen Ayed. Conçu et développé avec passion.</p>
-  </footer>
+<!-- ══════════════════ COMPÉTENCES & PROJETS ══════════════════ -->
+<section id="skills" class="border-t border-night-border py-28">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="reveal mb-16">
+      <p class="font-mono text-xs text-brand mb-3">// 02 — compétences &amp; réalisations</p>
+      <h2 class="text-4xl font-black tracking-tight">Compétences en Action</h2>
+      <p class="mt-3 max-w-sm text-sm text-chalk/40">Survolez un savoir-faire pour révéler les projets liés — et vice versa.</p>
+    </div>
 
-  <script>
-    const navToggle = document.getElementById('navToggle');
-    const mobileNav = document.getElementById('mobileNav');
-    navToggle.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+    <div class="reveal grid grid-cols-1 gap-20 lg:grid-cols-2 lg:items-start">
 
-    // --- Logique de la carte interactive ---
-    const allSkills = document.querySelectorAll('.skill-tag');
-    const allProjects = document.querySelectorAll('.project-card');
+      <!-- SKILLS -->
+      <div class="space-y-10">
+        <!-- Techniques -->
+        <div>
+          <div class="mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-microchip text-brand text-xs"></i>
+            <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-chalk/35">Compétences Techniques</h3>
+          </div>
+          <div class="flex flex-wrap gap-2" id="sk-tech">
+            <span class="sk-tag rounded-lg border border-night-border bg-night-card px-3.5 py-2 text-sm font-medium text-chalk/60 hover:border-brand/40 hover:text-white" data-skill="pentest">Auditer &amp; Pentester</span>
+            <span class="sk-tag rounded-lg border border-night-border bg-night-card px-3.5 py-2 text-sm font-medium text-chalk/60 hover:border-brand/40 hover:text-white" data-skill="securite">Sécuriser des Systèmes</span>
+            <span class="sk-tag rounded-lg border border-night-border bg-night-card px-3.5 py-2 text-sm font-medium text-chalk/60 hover:border-brand/40 hover:text-white" data-skill="grc">Analyser les Risques (EBIOS)</span>
+            <span class="sk-tag rounded-lg border border-night-border bg-night-card px-3.5 py-2 text-sm font-medium text-chalk/60 hover:border-brand/40 hover:text-white" data-skill="reseau">Concevoir une Architecture Réseau</span>
+            <span class="sk-tag rounded-lg border border-night-border bg-night-card px-3.5 py-2 text-sm font-medium text-chalk/60 hover:border-brand/40 hover:text-white" data-skill="cisco">Configurer en Cisco IOS (CCNA)</span>
+            <span class="sk-tag rounded-lg border border-night-border bg-night-card px-3.5 py-2 text-sm font-medium text-chalk/60 hover:border-brand/40 hover:text-white" data-skill="python">Automatiser avec Python</span>
+            <span class="sk-tag rounded-lg border border-night-border bg-night-card px-3.5 py-2 text-sm font-medium text-chalk/60 hover:border-brand/40 hover:text-white" data-skill="signal">Analyser des Signaux (RF / Audio)</span>
+            <span class="sk-tag rounded-lg border border-night-border bg-night-card px-3.5 py-2 text-sm font-medium text-chalk/60 hover:border-brand/40 hover:text-white" data-skill="docker">Conteneuriser avec Docker</span>
+            <span class="sk-tag rounded-lg border border-night-border bg-night-card px-3.5 py-2 text-sm font-medium text-chalk/60 hover:border-brand/40 hover:text-white" data-skill="linux">Administrer sous Linux</span>
+            <span class="sk-tag rounded-lg border border-night-border bg-night-card px-3.5 py-2 text-sm font-medium text-chalk/60 hover:border-brand/40 hover:text-white" data-skill="dev-web">Développer des Applications Web</span>
+          </div>
+        </div>
 
-    allSkills.forEach(skill => {
-        skill.addEventListener('mouseenter', () => {
-            const skillId = skill.dataset.skill;
-            allProjects.forEach(project => {
-                const projectSkills = project.dataset.projectUses.split(' ');
-                if (!projectSkills.includes(skillId)) {
-                    project.classList.add('dimmed');
-                }
-            });
-        });
+        <!-- Transversales — même couleur brand (commentaire prof) -->
+        <div>
+          <div class="mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-users text-brand text-xs"></i>
+            <h3 class="font-mono text-xs font-bold uppercase tracking-widest text-chalk/35">Compétences Transversales</h3>
+          </div>
+          <div class="flex flex-wrap gap-2" id="sk-soft">
+            <span class="sk-tag rounded-lg border border-night-border bg-night-card px-3.5 py-2 text-sm font-medium text-chalk/60 hover:border-brand/40 hover:text-white" data-skill="gestion-projet">Piloter un Projet</span>
+            <span class="sk-tag rounded-lg border border-night-border bg-night-card px-3.5 py-2 text-sm font-medium text-chalk/60 hover:border-brand/40 hover:text-white" data-skill="travail-equipe">Travailler en Équipe</span>
+            <span class="sk-tag rounded-lg border border-night-border bg-night-card px-3.5 py-2 text-sm font-medium text-chalk/60 hover:border-brand/40 hover:text-white" data-skill="communication">Communiquer &amp; Vulgariser</span>
+            <span class="sk-tag rounded-lg border border-night-border bg-night-card px-3.5 py-2 text-sm font-medium text-chalk/60 hover:border-brand/40 hover:text-white" data-skill="rigueur">Analyser avec Rigueur</span>
+            <span class="sk-tag rounded-lg border border-night-border bg-night-card px-3.5 py-2 text-sm font-medium text-chalk/60 hover:border-brand/40 hover:text-white" data-skill="documentation">Rédiger une Documentation</span>
+            <span class="sk-tag rounded-lg border border-night-border bg-night-card px-3.5 py-2 text-sm font-medium text-chalk/60 hover:border-brand/40 hover:text-white" data-skill="autonomie">Travailler en Autonomie</span>
+          </div>
+        </div>
+      </div>
 
-        skill.addEventListener('mouseleave', () => {
-            allProjects.forEach(project => project.classList.remove('dimmed'));
-        });
+      <!-- PROJETS -->
+      <div>
+        <!-- Filtres -->
+        <div class="mb-5 flex flex-wrap gap-2" id="filter-bar">
+          <button class="fbtn on" data-f="all">Tous</button>
+          <button class="fbtn" data-f="cyber">Cybersécurité</button>
+          <button class="fbtn" data-f="reseau">Réseaux</button>
+          <button class="fbtn" data-f="dev">Développement</button>
+          <button class="fbtn" data-f="signal">Signal &amp; Physique</button>
+        </div>
+
+        <div id="proj-list" class="space-y-3">
+
+          <!-- ① Pentest Docker -->
+          <a href="audit-docker.html"
+             class="proj-c proj-item relative block overflow-hidden rounded-2xl border border-brand/30 bg-night-card p-5 group"
+             data-uses="pentest securite linux docker python rigueur documentation" data-cat="cyber">
+            <div class="absolute right-0 top-0 rounded-bl-xl bg-brand px-3 py-1.5 text-xs font-black text-white">★ Meilleure réalisation</div>
+            <div class="mb-2 flex flex-wrap gap-2">
+              <span class="badge b-red">SAÉ 3.4</span>
+              <span class="badge b-slate">Cybersécurité</span>
+            </div>
+            <h4 class="pr-32 font-bold text-white transition group-hover:text-brand">Audit &amp; Pentest Black Box — Infrastructure Docker</h4>
+            <p class="mt-1 text-xs italic text-chalk/35">Metasploit · Nmap · CVE-2017-7494 (SambaCry) · Pivoting · Escalade de privilèges</p>
+            <p class="mt-2 text-sm text-chalk/55">Compromission complète d'une infra conteneurisée : exploitation SambaCry, tunneling SSH pour le mouvement latéral, accès Root validé. Rapport de remédiation technique rédigé.</p>
+          </a>
+
+          <!-- ② EBIOS -->
+          <a href="ebios.html"
+             class="proj-c proj-item block rounded-2xl border border-night-border bg-night-card p-5 group"
+             data-uses="securite grc gestion-projet rigueur" data-cat="cyber">
+            <div class="mb-2 flex flex-wrap gap-2">
+              <span class="badge b-blue">Certification</span>
+              <span class="badge b-slate">ANSSI</span>
+            </div>
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <h4 class="font-bold text-white transition group-hover:text-brand">Certification EBIOS Risk Manager</h4>
+                <p class="mt-1 text-xs text-chalk/40">Méthode d'analyse de risques de référence française — cadrage, scénarios de menaces, parties prenantes, traitement du risque.</p>
+              </div>
+              <i class="fa-solid fa-shield-halved mt-0.5 flex-shrink-0 text-2xl text-blue-400"></i>
+            </div>
+          </a>
+
+          <!-- ③ CCNA -->
+          <div class="proj-item grid grid-cols-2 gap-3" data-cat="reseau">
+            <a href="ccna.html" class="proj-c block rounded-2xl border border-night-border bg-night-card p-4 group" data-uses="reseau cisco securite">
+              <div class="mb-2"><span class="badge b-green">Certification</span></div>
+              <h4 class="text-sm font-bold text-white transition group-hover:text-brand">Cisco CCNA 2</h4>
+              <p class="mt-1 text-xs text-chalk/35">Déc. 2025 · VLANs, STP, routage inter-VLAN, sécurité L2</p>
+            </a>
+            <a href="ccna.html" class="proj-c block rounded-2xl border border-night-border bg-night-card p-4 group" data-uses="reseau cisco">
+              <div class="mb-2"><span class="badge b-green">Certification</span></div>
+              <h4 class="text-sm font-bold text-white transition group-hover:text-brand">Cisco CCNA 1</h4>
+              <p class="mt-1 text-xs text-chalk/35">Oct. 2025 · OSI, IPv4/IPv6, configuration IOS CLI</p>
+            </a>
+          </div>
+
+          <!-- ④ Architecture PME -->
+          <a href="sae21.html"
+             class="proj-c proj-item block rounded-2xl border border-night-border bg-night-card p-5 group"
+             data-uses="reseau securite cisco firewall documentation gestion-projet" data-cat="reseau">
+            <div class="mb-2 flex flex-wrap gap-2">
+              <span class="badge b-red">SAÉ 2.1</span>
+              <span class="badge b-slate">Architecture Réseau</span>
+            </div>
+            <h4 class="font-bold text-white transition group-hover:text-brand">Architecture Réseau Sécurisée — PME</h4>
+            <p class="mt-1 text-xs italic text-chalk/35">Cisco Packet Tracer · ASA Firewall · DMZ · VLANs · NAT · OSPF</p>
+            <p class="mt-2 text-sm text-chalk/55">Conception complète de l'infrastructure d'une PME : segmentation VLANs, pare-feu ASA avec ACLs, DMZ pour le serveur web, NAT statique/dynamique.</p>
+          </a>
+
+          <!-- ⑤ Scanner Python -->
+          <a href="scan-secu.html"
+             class="proj-c proj-item block rounded-2xl border border-night-border bg-night-card p-5 group"
+             data-uses="securite python linux rigueur" data-cat="cyber dev">
+            <div class="mb-2 flex flex-wrap gap-2">
+              <span class="badge b-red">Projet Personnel</span>
+              <span class="badge b-slate">Python · Sécu</span>
+            </div>
+            <h4 class="font-bold text-white transition group-hover:text-brand">Scanner de Sécurité Réseau Automatisé</h4>
+            <p class="mt-1 text-xs italic text-chalk/35">Python · Scapy · SQLite · Reporting automatique</p>
+            <p class="mt-2 text-sm text-chalk/55">Outil de détection de vulnérabilités sur réseau local avec historisation des scans en base de données et génération de rapports exploitables.</p>
+          </a>
+
+          <!-- ⑥ Thales -->
+          <a href="thales.html"
+             class="proj-c proj-item block rounded-2xl border border-night-border bg-night-card p-5 group"
+             data-uses="dev-web securite documentation gestion-projet travail-equipe" data-cat="dev">
+            <div class="mb-2 flex flex-wrap gap-2">
+              <span class="badge b-amber">Partenariat Entreprise</span>
+              <span class="badge b-slate">Thales Alenia Space</span>
+            </div>
+            <h4 class="font-bold text-white transition group-hover:text-brand">Interface Web — Banc Avionique (Thales)</h4>
+            <p class="mt-1 text-xs italic text-chalk/35">PHP · Gestion des sessions · Back-end · Documentation technique</p>
+            <p class="mt-2 text-sm text-chalk/55">Dans le cadre d'un partenariat universitaire avec Thales : développement back-end et mise en place de la sécurité des accès pour piloter un banc avionique.</p>
+          </a>
+
+          <!-- ⑦ DSP Audio -->
+          <a href="audio-dsp.html"
+             class="proj-c proj-item block rounded-2xl border border-night-border bg-night-card p-5 group"
+             data-uses="python signal linux rigueur" data-cat="dev signal">
+            <div class="mb-2 flex flex-wrap gap-2">
+              <span class="badge b-red">Projet Académique</span>
+              <span class="badge b-slate">Traitement du Signal</span>
+            </div>
+            <h4 class="font-bold text-white transition group-hover:text-brand">Station de Mixage &amp; Traitement Audio (DSP)</h4>
+            <p class="mt-1 text-xs italic text-chalk/35">Python 3 · GStreamer · ipywidgets</p>
+            <p class="mt-2 text-sm text-chalk/55">Interface graphique de traitement du signal audio en temps réel : spatialisation, transcodage et effets DSP via une architecture modulaire GStreamer.</p>
+          </a>
+
+          <!-- ⑧ Conciergerie -->
+          <a href="conciergerie.html"
+             class="proj-c proj-item block rounded-2xl border border-night-border bg-night-card p-5 group"
+             data-uses="dev-web communication gestion-projet autonomie" data-cat="dev">
+            <div class="mb-2 flex flex-wrap gap-2">
+              <span class="badge b-amber">Freelance · Projet réel</span>
+              <span class="badge b-slate">Monaco</span>
+            </div>
+            <h4 class="font-bold text-white transition group-hover:text-brand">Site Vitrine — Conciergerie de Luxe Monaco</h4>
+            <p class="mt-1 text-xs italic text-chalk/35">HTML/CSS/JS · Design responsive · SEO local</p>
+            <p class="mt-2 text-sm text-chalk/55">Mission freelance réelle : de la prise de besoin à la mise en ligne. Site vitrine élégant pour une clientèle internationale haut de gamme.</p>
+          </a>
+
+          <!-- ⑨ Portfolio -->
+          <a href="portfolio.html"
+             class="proj-c proj-item block rounded-2xl border border-night-border bg-night-card p-5 group"
+             data-uses="dev-web gestion-projet autonomie" data-cat="dev">
+            <div class="mb-2"><span class="badge b-slate">Méta-projet · Front-end</span></div>
+            <h4 class="font-bold text-white transition group-hover:text-brand">Ce Portfolio (Méta-Projet)</h4>
+            <p class="mt-1 text-xs italic text-chalk/35">HTML5 · Tailwind CSS · JavaScript natif</p>
+            <p class="mt-2 text-sm text-chalk/55">Développement front-end complet avec animation terminal, système interactif compétences/projets et navigation fluide.</p>
+          </a>
+
+          <!-- ⑩ NSI JO -->
+          <a href="nsi-jo2024.html"
+             class="proj-c proj-item block rounded-2xl border border-night-border bg-night-card p-5 group"
+             data-uses="python gestion-projet travail-equipe" data-cat="dev">
+            <div class="mb-2 flex flex-wrap gap-2">
+              <span class="badge b-amber">🏆 1ᵉʳ Prix Régional</span>
+              <span class="badge b-slate">Trophées NSI 2023</span>
+            </div>
+            <h4 class="font-bold text-white transition group-hover:text-brand">Jeu Éducatif — JO Paris 2024 (NSI)</h4>
+            <p class="mt-1 text-xs italic text-chalk/35">Python · Tkinter · Gestion de Projet en équipe</p>
+            <p class="mt-2 text-sm text-chalk/55">Application Python créée en équipe pour les Trophées NSI, primée pour la qualité technique et la créativité. Première expérience de gestion de projet.</p>
+          </a>
+
+          <!-- ⑪ TV Numérique -->
+          <a href="tv-num.html"
+             class="proj-c proj-item block rounded-2xl border border-night-border bg-night-card p-5 group"
+             data-uses="signal rigueur" data-cat="signal">
+            <div class="mb-2 flex flex-wrap gap-2">
+              <span class="badge b-red">SAÉ 3.1</span>
+              <span class="badge b-slate">Mesures RF</span>
+            </div>
+            <h4 class="font-bold text-white transition group-hover:text-brand">Qualification Transmission TV Numérique (DVB-T/S)</h4>
+            <p class="mt-1 text-xs italic text-chalk/35">Analyseur de spectre · 64-QAM · DVB-T/S · MER · BER</p>
+            <p class="mt-2 text-sm text-chalk/55">Validation d'une chaîne de transmission satellite/terrestre — analyse de constellation, qualification du lien (MER &gt; 30 dB).</p>
+          </a>
+
+          <!-- ⑫ Câble Coaxial -->
+          <a href="coaxial.html"
+             class="proj-c proj-item block rounded-2xl border border-night-border bg-night-card p-5 group"
+             data-uses="signal rigueur" data-cat="signal">
+            <div class="mb-2"><span class="badge b-slate">TP Métrologie RF</span></div>
+            <h4 class="font-bold text-white transition group-hover:text-brand">Caractérisation d'un Câble Coaxial</h4>
+            <p class="mt-1 text-xs italic text-chalk/35">VNA · Oscilloscope · Couche physique (L1)</p>
+            <p class="mt-2 text-sm text-chalk/55">Mesures d'impédance, d'affaiblissement et de vitesse de propagation sur support réel — comparaison aux données fabricant et rédaction du rapport.</p>
+          </a>
+
+          <!-- ⑬ E-Réputation -->
+          <a href="e-reputation.html"
+             class="proj-c proj-item block rounded-2xl border border-night-border bg-night-card p-5 group"
+             data-uses="communication gestion-projet travail-equipe" data-cat="dev">
+            <div class="mb-2"><span class="badge b-slate">Communication · SAÉ</span></div>
+            <h4 class="font-bold text-white transition group-hover:text-brand">Campagne de Sensibilisation — E-Réputation</h4>
+            <p class="mt-1 text-xs italic text-chalk/35">Vulgarisation technique · Identité numérique · Gestion de Projet</p>
+            <p class="mt-2 text-sm text-chalk/55">Création d'un kit complet (affiche, flyer, script vidéo) pour sensibiliser un public non-technique aux enjeux de l'empreinte numérique.</p>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ PARCOURS ══════════════════ -->
+<section id="journey" class="border-t border-night-border py-28">
+  <div class="mx-auto max-w-4xl px-6">
+    <div class="reveal mb-16">
+      <p class="font-mono text-xs text-brand mb-3">// 03 — parcours</p>
+      <h2 class="text-4xl font-black tracking-tight">Mon Parcours</h2>
+      <p class="mt-3 max-w-sm text-sm text-chalk/40">De la première compétition Python au premier pentest — les étapes qui façonnent mon expertise.</p>
+    </div>
+
+    <div class="reveal relative ml-4 border-l border-night-border pl-8 space-y-10">
+
+      <!-- Stage -->
+      <div class="relative">
+        <div class="tl-dot absolute -left-[2.6rem] top-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-brand">
+          <i class="fa-solid fa-magnifying-glass text-white text-xs"></i>
+        </div>
+        <div class="rounded-2xl border border-brand/20 bg-night-card p-6">
+          <div class="mb-3 flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p class="font-bold text-white text-lg">Stage Professionnel <span class="text-brand">(Recherche active)</span></p>
+              <p class="font-mono text-xs text-chalk/35 mt-0.5">7 Avril → 19 Juin 2026</p>
+            </div>
+            <span class="badge b-red animate-pulse">Disponible</span>
+          </div>
+          <p class="text-sm text-chalk/55">Stage de fin de 2ᵉ année BUT R&T en réseaux, télécommunications ou cybersécurité. Je recherche un environnement technique concret pour contribuer et progresser sur des problématiques réelles.</p>
+        </div>
+      </div>
+
+      <!-- BUT 2e année -->
+      <div class="relative">
+        <div class="tl-dot absolute -left-[2.6rem] top-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-night-card border border-night-border">
+          <i class="fa-solid fa-graduation-cap text-brand text-xs"></i>
+        </div>
+        <div class="rounded-2xl border border-night-border bg-night-card p-6">
+          <p class="font-bold text-white text-lg">BUT R&T — 2ᵉ année <span class="text-chalk/40 text-sm font-normal">(en cours)</span></p>
+          <p class="font-mono text-xs text-chalk/35 mt-0.5">IUT Nice Côte d'Azur · 2024–2025</p>
+          <p class="mt-3 text-sm text-chalk/55">Cybersécurité (audit, pentesting, EBIOS), réseaux avancés (VPN, VLAN, protocoles L2/L3), traitement du signal RF, administration Linux. Projets SAÉ en conditions réelles.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="badge b-green"><i class="fa-solid fa-circle-check"></i> CCNA 2 — Déc. 2025</span>
+            <span class="badge b-green"><i class="fa-solid fa-circle-check"></i> CCNA 1 — Oct. 2025</span>
+            <span class="badge b-blue"><i class="fa-solid fa-shield-halved"></i> EBIOS RM — ANSSI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUT 1re année -->
+      <div class="relative">
+        <div class="tl-dot absolute -left-[2.6rem] top-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-night-card border border-night-border">
+          <i class="fa-solid fa-graduation-cap text-chalk/30 text-xs"></i>
+        </div>
+        <div class="rounded-2xl border border-night-border bg-night-card p-6">
+          <p class="font-bold text-white text-lg">BUT R&T — 1ʳᵉ année</p>
+          <p class="font-mono text-xs text-chalk/35 mt-0.5">IUT Nice Côte d'Azur · 2023–2024</p>
+          <p class="mt-3 text-sm text-chalk/55">Fondements en architecture réseau, adressage IP, modèles OSI/TCP-IP, transmission physique, électronique. Premiers projets SAÉ en équipe dont le partenariat Thales Alenia Space.</p>
+        </div>
+      </div>
+
+      <!-- Bac -->
+      <div class="relative">
+        <div class="tl-dot absolute -left-[2.6rem] top-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-night-card border border-night-border">
+          <i class="fa-solid fa-school text-chalk/30 text-xs"></i>
+        </div>
+        <div class="p-2">
+          <p class="font-bold text-white">Baccalauréat Général</p>
+          <p class="font-mono text-xs text-chalk/35 mt-0.5">Spécialités Mathématiques &amp; NSI · 2023</p>
+          <p class="mt-2 text-sm text-chalk/55">Option Mathématiques Expertes. Base solide en algorithmique et structures de données via la spécialité NSI.</p>
+        </div>
+      </div>
+
+      <!-- NSI -->
+      <div class="relative">
+        <div class="tl-dot absolute -left-[2.6rem] top-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-amber-500">
+          <i class="fa-solid fa-trophy text-white text-xs"></i>
+        </div>
+        <div class="p-2">
+          <p class="font-bold text-white">🏆 1ᵉʳ Prix Régional — Trophées NSI</p>
+          <p class="font-mono text-xs text-chalk/35 mt-0.5">2023</p>
+          <p class="mt-2 text-sm text-chalk/55">Jeu éducatif Python sur les JO de Paris 2024 — récompensé pour la qualité technique et la créativité. Première vraie gestion de projet en équipe.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CONTACT ══════════════════ -->
+<section id="contact" class="border-t border-night-border py-28">
+  <div class="mx-auto max-w-xl px-6 text-center">
+    <div class="reveal">
+      <p class="font-mono text-xs text-brand mb-3">// 04 — contact</p>
+      <h2 class="text-4xl font-black tracking-tight">Travaillons ensemble.</h2>
+      <p class="mt-4 text-sm text-chalk/40 max-w-sm mx-auto">
+        Disponible pour un stage du 7 avril au 19 juin 2026 en réseaux, télécommunications ou cybersécurité.
+      </p>
+      <a href="/cdn-cgi/l/email-protection#dfacb0b9a6bab1f1bea6babb9fb6aaabf1aab1b6a9f2bcb0abbabbbea5aaadf1b9ad" class="mt-10 inline-flex items-center gap-3 rounded-full bg-brand px-10 py-4 font-bold text-white transition hover:bg-brand-dark hover:scale-105" style="box-shadow:0 8px 36px rgba(239,68,68,.28);">
+        <i class="fa-solid fa-envelope"></i> Envoyez-moi un email
+      </a>
+      <div class="mt-12">
+        <p class="font-mono text-xs text-chalk/25 mb-4">ou retrouvez-moi sur</p>
+        <div class="flex justify-center gap-3">
+          <a href="https://www.linkedin.com/in/ayedsofyen/" target="_blank"
+             class="flex items-center gap-2 rounded-xl border border-night-border px-5 py-3 text-sm font-medium text-chalk/40 transition hover:border-brand/40 hover:text-brand">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://github.com/Sofyenayed" target="_blank"
+             class="flex items-center gap-2 rounded-xl border border-night-border px-5 py-3 text-sm font-medium text-chalk/40 transition hover:border-brand/40 hover:text-brand">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t border-night-border py-8 text-center">
+  <p class="font-mono text-xs text-night-muted">© 2026 Sofyen Ayed — Conçu &amp; développé avec passion.</p>
+</footer>
+
+<!-- ══════════════════ JS ══════════════════ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* Header glass */
+const hdr = document.getElementById('hdr');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  hdr.style.background        = y>30 ? 'rgba(9,9,11,.88)' : 'transparent';
+  hdr.style.backdropFilter    = y>30 ? 'blur(18px)'       : 'blur(0)';
+  hdr.style.borderBottom      = y>30 ? '1px solid #27272a': '1px solid transparent';
+});
+
+/* Mobile nav */
+const burger = document.getElementById('burgerBtn');
+const mMenu  = document.getElementById('mobileMenu');
+burger.addEventListener('click', () => mMenu.classList.toggle('hidden'));
+mMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mMenu.classList.add('hidden')));
+
+/* Active nav */
+const secs  = document.querySelectorAll('section[id]');
+const navls = document.querySelectorAll('.nav-l');
+const navIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting)
+      navls.forEach(l => l.classList.toggle('active', l.getAttribute('href')==='#'+e.target.id));
+  });
+},{threshold:.42});
+secs.forEach(s => navIO.observe(s));
+
+/* Scroll reveal */
+const rvIO = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el => rvIO.observe(el));
+
+/* Terminal animation */
+document.addEventListener('DOMContentLoaded', () => {
+  const out  = document.getElementById('term-lines');
+  const prof = document.getElementById('term-profile');
+
+  const LINES = [
+    { cmd:true,  raw:'sofyen-ayed --init',                                              wait:600 },
+    { cmd:false, raw:'Initialisation du profil...',                                     wait:250 },
+    { cmd:false, html:'<span class="text-green-400">✓</span> <span class="text-chalk/60">Connexion établie.</span>', wait:800 },
+    { cmd:true,  raw:'./load-skills.sh --verbose',                                      wait:500 },
+    { cmd:false, raw:'Chargement des compétences :',                                    wait:160 },
+    { cmd:false, html:'<span class="text-brand">▸</span> <span class="text-chalk/60">Auditer &amp; Pentester</span>',           wait:110 },
+    { cmd:false, html:'<span class="text-brand">▸</span> <span class="text-chalk/60">Analyser des Signaux RF &amp; Audio</span>', wait:110 },
+    { cmd:false, html:'<span class="text-brand">▸</span> <span class="text-chalk/60">Configurer Cisco (CCNA 1 &amp; 2)</span>',   wait:110 },
+    { cmd:false, html:'<span class="text-brand">▸</span> <span class="text-chalk/60">Analyser les Risques (EBIOS RM)</span>',    wait:750 },
+    { cmd:true,  raw:'display --profile --stage',                                       wait:700 },
+  ];
+
+  let i=0;
+  function tick(){
+    if(i>=LINES.length){ show(); return; }
+    const l=LINES[i++];
+    const div=document.createElement('div');
+    div.className='leading-relaxed';
+    out.appendChild(div);
+
+    if(l.html){
+      div.innerHTML=(l.cmd?'<span class="text-cyan-400 mr-1">$</span>':'')+l.html;
+      setTimeout(tick,l.wait);
+    } else {
+      const pref=l.cmd?'$ ':'';
+      const full=pref+l.raw;
+      let c=0;
+      const iv=setInterval(()=>{
+        c++;
+        const slice=l.cmd
+          ? '<span class="text-cyan-400 mr-1">$</span>'+full.slice(2,c)
+          : '<span class="text-chalk/60">'+full.slice(0,c)+'</span>';
+        div.innerHTML=slice+(c<full.length?'<span class="cursor text-brand">▌</span>':'');
+        if(c>=full.length){ clearInterval(iv); setTimeout(tick,l.wait); }
+      },22);
+    }
+  }
+
+  function show(){
+    prof.classList.remove('hidden');
+    prof.animate(
+      [{opacity:0,transform:'translateY(14px)'},{opacity:1,transform:'none'}],
+      {duration:480,easing:'ease-out',fill:'forwards'}
+    );
+  }
+
+  tick();
+});
+
+/* Skill ↔ Project cross-highlight */
+const allSk=document.querySelectorAll('.sk-tag');
+const allPj=document.querySelectorAll('.proj-c');
+
+allSk.forEach(sk=>{
+  sk.addEventListener('mouseenter',()=>{
+    const id=sk.dataset.skill;
+    allPj.forEach(p=>p.classList.toggle('dimmed',!(p.dataset.uses||'').split(' ').includes(id)));
+  });
+  sk.addEventListener('mouseleave',()=>allPj.forEach(p=>p.classList.remove('dimmed')));
+});
+
+allPj.forEach(p=>{
+  p.addEventListener('mouseenter',()=>{
+    const uses=(p.dataset.uses||'').split(' ');
+    allSk.forEach(sk=>{
+      const hit=uses.includes(sk.dataset.skill);
+      sk.classList.toggle('sk-lit',hit);
+      sk.classList.toggle('dimmed',!hit);
     });
+  });
+  p.addEventListener('mouseleave',()=>allSk.forEach(sk=>sk.classList.remove('sk-lit','dimmed')));
+});
 
-    allProjects.forEach(project => {
-        project.addEventListener('mouseenter', () => {
-            const projectSkills = project.dataset.projectUses.split(' ');
-            allSkills.forEach(skill => {
-                if (projectSkills.includes(skill.dataset.skill)) {
-                    skill.classList.add('highlight');
-                } else {
-                    skill.classList.add('dimmed');
-                }
-            });
-        });
-
-        project.addEventListener('mouseleave', () => {
-            allSkills.forEach(skill => {
-                skill.classList.remove('highlight');
-                skill.classList.remove('dimmed');
-            });
-        });
-    });
-  </script>
-</body>
-</html>
+/* Project filter */
+document.querySelectorAll('.fbtn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    const f=btn.dataset.f;
+    document.querySelectorAll('.proj-item').forEach(item=>{
+      const cats=(item.d
