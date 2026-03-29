@@ -717,10 +717,25 @@ allPj.forEach(p=>{
 });
 
 /* Project filter */
-document.querySelectorAll('.fbtn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('on'));
-    btn.classList.add('on');
-    const f=btn.dataset.f;
-    document.querySelectorAll('.proj-item').forEach(item=>{
-      const cats=(item.d
+document.getElementById('filter-bar').addEventListener('click', function(e) {
+  const btn = e.target.closest('.fbtn');
+  if (!btn) return;
+
+  // Update active button
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+
+  const f = btn.dataset.f;
+
+  document.querySelectorAll('.proj-item').forEach(function(item) {
+    if (f === 'all') {
+      item.style.display = '';
+    } else {
+      const cats = (item.dataset.cat || '').split(' ');
+      item.style.display = cats.includes(f) ? '' : 'none';
+    }
+  });
+});
+</script>
+</body>
+</html>
