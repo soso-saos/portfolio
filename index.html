@@ -47,8 +47,9 @@
 
     .nav-l.active { color:#ef4444; }
 
-    .reveal { opacity:0; transform:translateY(24px); transition:opacity .65s ease, transform .65s ease; }
-    .reveal.in { opacity:1; transform:none; }
+    .reveal { opacity:1; transform:none; transition:opacity .65s ease, transform .65s ease; }
+    .reveal.anim { opacity:0; transform:translateY(24px); }
+    .reveal.anim.in { opacity:1; transform:none; }
 
     .proj-c:hover { border-color:rgba(239,68,68,.45) !important; box-shadow:0 4px 28px rgba(239,68,68,.1); }
 
@@ -627,11 +628,14 @@ const navIO = new IntersectionObserver(entries => {
 },{threshold:.42});
 secs.forEach(s => navIO.observe(s));
 
-/* Scroll reveal */
+/* Scroll reveal — add .anim first so elements start invisible, then fade in */
 const rvIO = new IntersectionObserver(entries=>{
   entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
 },{threshold:.08});
-document.querySelectorAll('.reveal').forEach(el => rvIO.observe(el));
+document.querySelectorAll('.reveal').forEach(el => {
+  el.classList.add('anim');
+  rvIO.observe(el);
+});
 
 /* Terminal animation */
 document.addEventListener('DOMContentLoaded', () => {
